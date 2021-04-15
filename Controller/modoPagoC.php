@@ -70,6 +70,7 @@ class ModoPagoC{
 
     }
 
+<<<<<<< HEAD
     public function DeleteModoPagoC(){
 
         if(isset($_POST["delete"])){
@@ -116,6 +117,8 @@ class ModoPagoC{
 
     }
 
+=======
+>>>>>>> master
 }
 
 ?>
