@@ -1,0 +1,68 @@
+*{
+	margin: auto;
+	padding: 0px;
+    list-style: none;
+    font-family: cursive;
+}
+
+.contenedor{
+	width: 100%;
+	height: auto;
+}
+
+table{
+    width: 100%;
+    list-style: none;
+}
+
+center, h4{
+    background-color:#ffff ;
+    margin-bottom: 20px;
+}
+
+table .menu .imagen, img{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.menu{
+	width: 20%;
+	height: auto;
+	background: #ffff;
+    color:green;
+    padding-bottom: 380px;
+}
+
+table .td-contenido{
+    width: 80%;
+    height: auto;
+	background-image: url("https://image.freepik.com/vector-gratis/fondo-naturaleza-lamina-dorada_52683-46173.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0.8; 
+	padding: 0px 0px 200px 0px;
+}
+
+.td-contenido h3{
+    margin: 0px 0px 30px 30px;
+}
+
+.td-contenido .cont-der{
+    width: 90%;
+    height: auto;
+    margin: auto;
+
+}
+
+footer{
+    padding: 20px 0px;
+    background-color: #339966;
+}
+
+footer p{
+    background-color: #339966;
+    margin: 0px;
+}
+
