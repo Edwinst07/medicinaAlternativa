@@ -123,7 +123,7 @@ class AccesoUsuarioC{
 
         if(isset($_POST["delete"])){
 
-            $datosC = array('cedula' => $_POST["cedula"],'nombre' => $_POST["nombre"], 'pass' => $_POST["pass"], 'perfil' => $_POST["perfil"]);
+            $datosC = $_POST["cedula"];
             $tablaBD = "accesoUsuario";
 
             $res = AccesoUsuarioM::DeleteAccesoUsuarioM($datosC,$tablaBD);
@@ -133,7 +133,7 @@ class AccesoUsuarioC{
                 echo '<script>alert("El registro se elimino correctamente")</script>';
             }else{
 
-                echo 'el registro de la c&eacute;dula No.'.$datosC["cedula"].' No se elimin&oacute;';
+                echo 'el registro de la c&eacute;dula No.'.$datosC.' No se elimin&oacute;';
             }
 
         }

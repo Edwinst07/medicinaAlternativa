@@ -5,24 +5,27 @@
 
                                 <div style="width: 50%;">
                                     <table class="table ">
-                                        <tr>
-                                            <td><label for="id">C&oacute;digo:</label></td>
-                                            <td>
-                                                <input type="text" name="codigo" id="number" value="" title="Campo numerico."
-                                                class="form-control">
-                                                <small class="form-text text-danger" id="msgNumber"></small>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><label for="cl">Descripci&oacute;n:</label></td>
-                                            <td>
-                                                <input type="text" name="descripcion" id="text" value="" title="solo se permite texto." 
-                                                class="form-control">
-                                                <small class="form-text text-danger" id="msgText"></small>
-                                            </td>
+                                        
+                                        <?php
+                                        
+                                        $consult = new CargoLaboralC();
+                                        $consult -> ConsultCargoLaboralC();
+                                        
+                                        ?>
+
                                         </tr>
                                         <tr class="table">
-                                            <td><br></td>
+                                            <td style="color: tomato">
+                                            
+                                            <?php
+                                            
+                                            $crud = new CargoLaboralC(); 
+                                            $crud -> InsertCargoLaboralC();
+                                            $crud -> DeleteCargoLaboralC();
+                                            $crud -> UpdateCargoLaboralC();
+                                            
+                                            ?>
+                                            
                                             <td></td>
                                         </tr>
                                         <?php
@@ -35,6 +38,6 @@
                                 </div>
 
                             </form>
-                            <script type="text/javascript" src="Vista/js/validar.js"></script>
+                            <!-- <script type="text/javascript" src="Vista/js/validar.js"></script> -->
                         </div>
 			

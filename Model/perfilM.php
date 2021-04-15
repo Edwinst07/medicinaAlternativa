@@ -43,11 +43,10 @@ class PerfilM{
     static public function DeletePerfilM($datosC,$tablaBD){
 
         $pdo = ConexionBD::cBD()->prepare("UPDATE `medicinaalternativa`.$tablaBD 
-                                            SET `idPerfil`=:idPerfil, `nombrePerfil`=:perfil, `estado`=1
+                                            SET `idPerfil`=:idPerfil, `nombrePerfil`=`nombrePerfil`, `estado`=1
                                             WHERE `idPerfil` = :idPerfil LIMIT 1");
 
-        $pdo -> bindParam(":idPerfil", $datosC["idPerfil"], PDO::PARAM_STR);
-        $pdo -> bindParam(":perfil", $datosC["perfil"], PDO::PARAM_STR);
+        $pdo -> bindParam(":idPerfil", $datosC, PDO::PARAM_STR);
 
         if($pdo -> execute()){
 
