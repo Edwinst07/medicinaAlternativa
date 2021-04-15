@@ -64,14 +64,11 @@ class AccesoUsuarioM{
     static public function DeleteAccesoUsuarioM($datosC, $tablaBD){
 
         $pdo = ConexionBD::cBD()->prepare("UPDATE `medicinaalternativa`.$tablaBD 
-                                            SET `cedula`=:cedula, `nombre`=:nombre, 
-                                                `password`=:pass, `perfil`=:perfil, `estado`=1
+                                            SET `cedula`=:cedula, `nombre`=`nombre`, 
+                                                `password`=`password`, `perfil`=`perfil`, `estado`=1
                                             WHERE `cedula` = :cedula LIMIT 1");
 
         $pdo -> bindParam(":cedula", $datosC["cedula"], PDO::PARAM_STR);
-        $pdo -> bindParam(":nombre", $datosC["nombre"], PDO::PARAM_STR);
-        $pdo -> bindParam(":pass", $datosC["pass"], PDO::PARAM_STR);
-        $pdo -> bindParam(":perfil", $datosC["perfil"], PDO::PARAM_STR);
 
         if($pdo -> execute()){
             return true;

@@ -5,24 +5,25 @@
 
                                 <div style="width: 50%;">
                                     <table class="table ">
-                                        <tr>
-                                            <td><label for="id">C&oacute;digo:</label></td>
-                                            <td>
-                                                <input type="text" name="codigo" value="" id="number" 
-                                                title="Campo numerico" class="form-control">
-                                                <small class="form-text text-danger" id="msgNumber"></small>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><label for="desc">Descripci&oacute;n:</label></td>
-                                            <td>
-                                                <input type="text" name="modoPago" id="text" value="" 
-                                                title="Campo de texto" class="form-control">
-                                                <small class="form-text text-danger" id="msgText"></small>
-                                            </td>
-                                        </tr>
+                                
+                                        <?php
+                                        
+                                        $consult = new ModoPagoC();
+                                        $consult -> ConsultModoPagoC();
+                                        
+                                        ?>
+
                                         <tr class="table">
-                                            <td><br></td>
+                                            <td style="color:tomato;">
+                                            
+                                            <?php
+                                            
+                                            $crud = new ModoPagoC();
+                                            $crud -> InsertModoPagoC();
+                                            
+                                            ?>
+
+                                            </td>
                                             <td></td>
                                         </tr>
                                         <?php
@@ -35,5 +36,5 @@
                                 </div>
 
                             </form>
-                            <script type="text/javascript" src="Vista/js/validar.js"></script>
+                            <!-- <script type="text/javascript" src="Vista/js/validar.js"></script> -->
                         </div>

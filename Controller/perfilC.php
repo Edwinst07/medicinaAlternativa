@@ -82,15 +82,15 @@ class PerfilC{
 
         if(isset($_POST["delete"])){
 
-            $datosC = array('idPerfil' => $_POST["id"], 'perfil' => $_POST["perfil"]);
+            $datosC = $_POST["id"];
             $tablaBD = "perfil";
     
             $res = PerfilM::DeletePerfilM($datosC,$tablaBD);
     
             if ($res) {
-                echo '<script>alert("Se elimino correctamente  el registro N.'.$datosC["idPerfil"].'")</script>';
+                echo '<script>alert("Se elimino correctamente  el registro N.'.$datosC.'")</script>';
             }else{
-                echo 'No se elimino el registro N.'.$datosC["idPerfil"];
+                echo 'No se elimino el registro N.'.$datosC;
             }
 
         }
