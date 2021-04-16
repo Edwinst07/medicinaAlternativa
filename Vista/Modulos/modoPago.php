@@ -20,11 +20,8 @@
                                             
                                             $crud = new ModoPagoC();
                                             $crud -> InsertModoPagoC();
-<<<<<<< HEAD
                                             $crud -> DeleteModoPagoC();
                                             $crud -> UpdateModoPagoC();
-=======
->>>>>>> master
                                             
                                             ?>
 

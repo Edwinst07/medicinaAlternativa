@@ -11,15 +11,23 @@ class ModoPagoC{
                 $datosC = array('codigo'=>$_POST["codigo"], 'modoPago'=>$_POST["modoPago"]);
                 $tablaBD = "modopago";
 
-                $res = ModoPagoM::InsertModoPagoM($datosC,$tablaBD);
+                if(ModoPagoM::ConsultModoPagoM($datosC, $tablaBD)){
 
-                if($res){
-
-                    echo '<script>alert("Se registro correctamente")</script>';
+                    echo '<script>alert("El registro Cod.'.$datosC["codigo"].' ya esta registrado!!")</script>';
 
                 }else{
 
-                    echo 'No se registro!!';
+                    $res = ModoPagoM::InsertModoPagoM($datosC,$tablaBD);
+
+                    if($res){
+    
+                        echo '<script>alert("Se registro correctamente")</script>';
+    
+                    }else{
+    
+                        echo 'No se registro!!';
+    
+                    }
 
                 }
 
@@ -70,7 +78,6 @@ class ModoPagoC{
 
     }
 
-<<<<<<< HEAD
     public function DeleteModoPagoC(){
 
         if(isset($_POST["delete"])){
@@ -117,8 +124,6 @@ class ModoPagoC{
 
     }
 
-=======
->>>>>>> master
 }
 
 ?>

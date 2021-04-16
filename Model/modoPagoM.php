@@ -42,7 +42,6 @@ class ModoPagoM{
 
     }
 
-<<<<<<< HEAD
     static public function DeleteModoPagoM($datosC,$tablaBD){
 
         $pdo = ConexionBD::cBD()->prepare("UPDATE `medicinaalternativa`.$tablaBD
@@ -84,8 +83,6 @@ class ModoPagoM{
 
     }
 
-=======
->>>>>>> master
 }
 
 ?>

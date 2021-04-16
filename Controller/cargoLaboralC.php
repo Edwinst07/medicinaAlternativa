@@ -11,14 +11,22 @@ class CargoLaboralC{
                 $datosC = array('codigo'=>$_POST["codigo"], 'desc'=>$_POST["descripcion"]);
                 $tablaBD = "cargolaboral";
 
-                $res = CargoLaboralM::InsertCargoLaboralM($datosC,$tablaBD);
+                if(CargoLaboralM::ConsultCargoLaboralM($datosC,$tablaBD)){
 
-                if($res){
+                    echo '<script>alert("El registro Cod.'.$datosC["codigo"].' ya esta registrado!!")</script>';
 
-                    echo "<script>alert('Se registro correctamente!!')</script>";
                 }else{
 
-                    echo "No se registro!!";
+                    $res = CargoLaboralM::InsertCargoLaboralM($datosC,$tablaBD);
+
+                    if($res){
+    
+                        echo "<script>alert('Se registro correctamente!!')</script>";
+                    }else{
+    
+                        echo "No se registro!!";
+                    }
+
                 }
 
             }
