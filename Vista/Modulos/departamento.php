@@ -1,7 +1,7 @@
 
 				<h3>Departamento</h3>
                         <div class="cont-der">
-                            <form method="POST" onsubmit="return validar();">
+                            <form method="POST">
 
                                 <div style="width: 50%;">
                                     <table class="table ">
@@ -33,5 +33,5 @@
                                 </div>
 
                             </form>
-                            <!-- <script type="text/javascript" src="Vista/js/validar.js"></script> -->
+                            <script type="text/javascript" src="Vista/js/validar.js"></script>
                         </div>

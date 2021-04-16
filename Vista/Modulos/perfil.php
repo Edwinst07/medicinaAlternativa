@@ -70,7 +70,7 @@
 
                             </form> -->
 
-                            <!-- <script type="text/javascript" src="Vista/js/validar.js"></script> -->
+                            <script type="text/javascript" src="Vista/js/validar.js"></script>
                         </div>
 
                         

@@ -4,38 +4,30 @@ class ModoPagoC{
 
     public function InsertModoPagoC(){
 
-        if(!empty($_POST["codigo"]) && !empty($_POST["modoPago"])){
+        if(isset($_POST["insert"])){
 
-            if(isset($_POST["insert"])){
+            $datosC = array('codigo'=>$_POST["codigo"], 'modoPago'=>$_POST["modoPago"]);
+            $tablaBD = "modopago";
 
-                $datosC = array('codigo'=>$_POST["codigo"], 'modoPago'=>$_POST["modoPago"]);
-                $tablaBD = "modopago";
+            if(ModoPagoM::ConsultModoPagoM($datosC, $tablaBD)){
 
-                if(ModoPagoM::ConsultModoPagoM($datosC, $tablaBD)){
+                echo '<script>alert("El registro Cod.'.$datosC["codigo"].' ya esta registrado!!")</script>';
 
-                    echo '<script>alert("El registro Cod.'.$datosC["codigo"].' ya esta registrado!!")</script>';
+            }else{
+
+                $res = ModoPagoM::InsertModoPagoM($datosC,$tablaBD);
+
+                if($res){
+
+                    echo '<script>alert("Se registro correctamente")</script>';
 
                 }else{
 
-                    $res = ModoPagoM::InsertModoPagoM($datosC,$tablaBD);
-
-                    if($res){
-    
-                        echo '<script>alert("Se registro correctamente")</script>';
-    
-                    }else{
-    
-                        echo 'No se registro!!';
-    
-                    }
+                    echo 'No se registro!!';
 
                 }
 
             }
-
-        }else{
-
-            echo "Llene los campos vacios!!";
 
         }
 
@@ -101,23 +93,19 @@ class ModoPagoC{
 
     public function UpdateModoPagoC(){
 
-        if(!empty($_POST["codigo"]) && !empty($_POST["modoPago"])){
+        if(isset($_POST["update"])){
 
-            if(isset($_POST["update"])){
-
-                $datosC = array('codigo'=>$_POST["codigo"], 'modoPago'=>$_POST["modoPago"]);
-                $tablaBD = "modopago";
-        
-                $res = ModoPagoM::UpdateModoPagoM($datosC,$tablaBD);
-        
-                if($res){
-        
-                    echo '<script>alert("Se actualizó correctamente el registro N.'.$datosC["codigo"].'")</script>';
-                }else{
-        
-                    echo 'No se actualiz&oacute; el registro!!';
-                }
-
+            $datosC = array('codigo'=>$_POST["codigo"], 'modoPago'=>$_POST["modoPago"]);
+            $tablaBD = "modopago";
+    
+            $res = ModoPagoM::UpdateModoPagoM($datosC,$tablaBD);
+    
+            if($res){
+    
+                echo '<script>alert("Se actualizó correctamente el registro N.'.$datosC["codigo"].'")</script>';
+            }else{
+    
+                echo 'No se actualiz&oacute; el registro!!';
             }
 
         }

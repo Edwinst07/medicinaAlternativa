@@ -5,38 +5,31 @@ class AccesoUsuarioC{
 
     public function InsertAccesoUsuarioC(){
 
-        if(!empty($_POST["cedula"]) && !empty($_POST["nombre"]) && !empty($_POST["pass"]) && !empty($_POST["perfil"])){
+        if(isset($_POST["insert"])){
 
-            if(isset($_POST["insert"])){
+            $datosC = array('cedula' => $_POST["cedula"],'nombre' => $_POST["nombre"], 'pass' => $_POST["pass"], 'perfil' => $_POST["perfil"]);
+            $tablaBD = "accesoUsuario";
 
-                $datosC = array('cedula' => $_POST["cedula"],'nombre' => $_POST["nombre"], 'pass' => $_POST["pass"], 'perfil' => $_POST["perfil"]);
-                $tablaBD = "accesoUsuario";
+            $consult = AccesoUsuarioM::ConsultAccesoUsuarioM($datosC,$tablaBD);
 
-                $consult = AccesoUsuarioM::ConsultAccesoUsuarioM($datosC,$tablaBD);
+            if($consult){
 
-                if($consult){
+                echo "El C&oacute;digo o descripci&oacute;n <b>¡ya se encuentra registrado!</b>";
 
-                    echo "El C&oacute;digo o descripci&oacute;n <b>¡ya se encuentra registrado!</b>";
+            }else{
 
+                $res = AccesoUsuarioM::InsertAccesoUsuarioM($datosC,$tablaBD);
+
+                if($res){
+
+                    echo "<script>alert('Se agrego Perfil Correctamente')</script>";
                 }else{
 
-                    $res = AccesoUsuarioM::InsertAccesoUsuarioM($datosC,$tablaBD);
-    
-                    if($res){
-    
-                        echo "<script>alert('Se agrego Perfil Correctamente')</script>";
-                    }else{
-    
-                        echo "Error al agregar empleado";
-                    }
+                    echo "Error al agregar empleado";
+                }
 
-                }   
-    
-            }
+            }   
 
-        }else{
-
-            echo "Llene los campos vacios!";
         }
 
     }

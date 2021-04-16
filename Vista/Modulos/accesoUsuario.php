@@ -2,7 +2,7 @@
 
 				<h3>Acceso usuario</h3>
                         <div class="cont-der">
-                            <form method="POST" onsubmit="return validar();">
+                            <form method="POST">
 
                                 <div style="width: 50%;">
                                     <table class="table ">

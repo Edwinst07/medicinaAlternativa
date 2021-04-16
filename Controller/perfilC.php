@@ -6,39 +6,32 @@ class PerfilC{
 
     public function InsertPerfilC(){
         
-        if (!empty($_POST["id"]) && !empty($_POST["perfil"])) {  
+        if(isset($_POST["insert"])){
 
-            if(isset($_POST["insert"])){
+            $datosC = array('idPerfil' => $_POST["id"], 'perfil' => $_POST["perfil"]);
+            $tablaBD = "perfil";
 
-                $datosC = array('idPerfil' => $_POST["id"], 'perfil' => $_POST["perfil"]);
-                $tablaBD = "perfil";
+            $consult = PerfilM::ConsultPerfilM($datosC,$tablaBD);
+
+            if($consult){
+
+                echo "El C&oacute;digo o descripci&oacute;n <b>¡ya se encuentra registrado!</b>";
+            }else{
+
+                $res = PerfilM::InsertPerfilM($datosC,$tablaBD);
+
+                if($res){
+                
+                    echo "<script>alert('Se agrego Perfil Correctamente')</script>";
     
-                $consult = PerfilM::ConsultPerfilM($datosC,$tablaBD);
-    
-                if($consult){
-    
-                    echo "El C&oacute;digo o descripci&oacute;n <b>¡ya se encuentra registrado!</b>";
                 }else{
     
-                    $res = PerfilM::InsertPerfilM($datosC,$tablaBD);
-    
-                    if($res){
-                    
-                        echo "<script>alert('Se agrego Perfil Correctamente')</script>";
-        
-                    }else{
-        
-                        echo "Error al agregar empleado";
-        
-                    }
+                    echo "Error al agregar empleado";
     
                 }
 
             }
 
-        }else{
-
-            echo "Llene los campos vacios!";
         }
     }
 

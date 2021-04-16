@@ -4,37 +4,32 @@ class CargoLaboralC{
 
     public function InsertCargoLaboralC(){  
 
-        if(!empty($_POST["codigo"]) && !empty($_POST["descripcion"])){
 
-            if(isset($_POST["insert"])){
+        if(isset($_POST["insert"])){
 
-                $datosC = array('codigo'=>$_POST["codigo"], 'desc'=>$_POST["descripcion"]);
-                $tablaBD = "cargolaboral";
+            $datosC = array('codigo'=>$_POST["codigo"], 'desc'=>$_POST["descripcion"]);
+            $tablaBD = "cargolaboral";
 
-                if(CargoLaboralM::ConsultCargoLaboralM($datosC,$tablaBD)){
+            if(CargoLaboralM::ConsultCargoLaboralM($datosC,$tablaBD)){
 
-                    echo '<script>alert("El registro Cod.'.$datosC["codigo"].' ya esta registrado!!")</script>';
+                echo '<script>alert("El registro Cod.'.$datosC["codigo"].' ya esta registrado!!")</script>';
 
+            }else{
+
+                $res = CargoLaboralM::InsertCargoLaboralM($datosC,$tablaBD);
+
+                if($res){
+
+                    echo "<script>alert('Se registro correctamente!!')</script>";
                 }else{
 
-                    $res = CargoLaboralM::InsertCargoLaboralM($datosC,$tablaBD);
-
-                    if($res){
-    
-                        echo "<script>alert('Se registro correctamente!!')</script>";
-                    }else{
-    
-                        echo "No se registro!!";
-                    }
-
+                    echo "No se registro!!";
                 }
 
             }
-            
-        }else{
 
-            echo "Llene los campos vacios!!";
         }
+
     }
 
     public function ConsultCargoLaboralC(){

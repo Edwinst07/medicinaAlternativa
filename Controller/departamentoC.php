@@ -1,44 +1,34 @@
 <?php
 
-//require_once "conexionBD.php";
-
 class DepartamentoC{
 
     public function InsertDepartamentoC(){
 
-        if(!empty($_POST["codigo"]) && !empty($_POST["departamento"])){
+        if(isset($_POST["insert"])){
 
-            if(isset($_POST["insert"])){
+            $datosC = array('codigo'=>$_POST["codigo"], 'departamento'=>$_POST["departamento"]);
+            $tablaBD = "departamento";
 
-                $datosC = array('codigo'=>$_POST["codigo"], 'departamento'=>$_POST["departamento"]);
-                $tablaBD = "departamento";
+            $consult = DepartamentoM::ConsultDepartamentoM($datosC,$tablaBD);
 
-                $consult = DepartamentoM::ConsultDepartamentoM($datosC,$tablaBD);
+            if($consult){
 
-                if($consult){
+                echo "El C&oacute;digo o descripci&oacute;n <b>¡ya se encuentra registrado!</b>";
+            }else{
 
-                    echo "El C&oacute;digo o descripci&oacute;n <b>¡ya se encuentra registrado!</b>";
+                $res = DepartamentoM::InsertDepartamentoM($datosC,$tablaBD);
+
+                if($res){
+
+                    echo "<script>alert('Insertado correctamente!!')</script>";
+
                 }else{
 
-                    $res = DepartamentoM::InsertDepartamentoM($datosC,$tablaBD);
-
-                    if($res){
-    
-                        echo "<script>alert('Insertado correctamente!!')</script>";
-    
-                    }else{
-    
-                        echo "No se registro!!";
-    
-                    }
+                    echo "No se registro!!";
 
                 }
 
             }
-
-        }else{
-
-            echo "Llene los campos vacios!!";
 
         }
 

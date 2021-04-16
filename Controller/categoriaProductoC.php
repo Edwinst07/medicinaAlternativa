@@ -4,29 +4,22 @@ class CategoriaProductoC{
 
     public function InsertCategoriaProductoC(){
 
-        if(!empty($_POST["codigo"]) && !empty($_POST["catProd"])){
-
-            if(isset($_POST["insert"])){
+        if(isset($_POST["insert"])){
 
 
-                $datosC = array('codigo'=>$_POST["codigo"], 'catProd'=>$_POST["catProd"]);
-                $tablaBD = "categoriaprod";
+            $datosC = array('codigo'=>$_POST["codigo"], 'catProd'=>$_POST["catProd"]);
+            $tablaBD = "categoriaprod";
 
-                $res = CategoriaProductoM::InsertCategoriaProductoM($datosC,$tablaBD);
+            $res = CategoriaProductoM::InsertCategoriaProductoM($datosC,$tablaBD);
 
-                if($res){
+            if($res){
 
-                    echo "<script>alert('Se registro correctamente!!')</script>";
-                }else{
+                echo "<script>alert('Se registro correctamente!!')</script>";
+            }else{
 
-                    echo 'No se registro!!';
-                }
-
+                echo 'No se registro!!';
             }
 
-        }else{
-
-            echo 'Llene los campos vacios!!';
         }
 
     }
