@@ -18,7 +18,7 @@ class PerfilM{
             return false;
         }
 
-        $pdo -> close();
+        $pdo -> close;
     }
 
     static public function ConsultPerfilM($datosC,$tablaBD){

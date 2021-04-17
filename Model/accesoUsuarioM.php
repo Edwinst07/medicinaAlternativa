@@ -26,7 +26,7 @@ class AccesoUsuarioM{
     public function SelectPerfilM(){
 
         $pdo = ConexionBD::cBD()->prepare("SELECT `idPerfil`,`nombrePerfil`
-        FROM `medicinaalternativa`.perfil ");
+                                            FROM `medicinaalternativa`.perfil ");
 
         if($pdo -> execute()){
 
