@@ -51,3 +51,14 @@
 	</div>
 </body>
 </html>
+
+<style>
+
+.td-contenido .cont-derecho{
+    width: 100%;
+    height: auto;
+    margin: auto;
+
+}
+
+</style>

@@ -37,7 +37,7 @@ class ProductoM{
     public function CategoriaProductoM(){
 
         $pdo = ConexionBD::cBD()->prepare("SELECT `idCategoria`, `nombreCategoria` 
-                                            FROM `medicinaalternativa`.categoriaprod");
+                                            FROM `medicinaalternativa`.categoriaprod WHERE `estado`=0");
 
         if($pdo -> execute()){
 
