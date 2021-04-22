@@ -8,4 +8,7 @@
 	                    <li><a class="dropdown-item" href="index.php?ruta=cargoLaboral">Cargo laboral</a></li>
 	                    <li><a class="dropdown-item" href="index.php?ruta=perfil">Perfil</a></li>
 	                    <li><a class="dropdown-item" href="index.php?ruta=accesoUsuario">Acceso usuario</a></li>
+						<li><a class="dropdown-item" href="index.php?ruta=cliente">Cliente</a></li>
+						<li><a class="dropdown-item" href="index.php?ruta=empleado">Empleado</a></li>
+						<li><a class="dropdown-item" href="index.php?ruta=sucursal">Sucursal</a></li>
                     </ul>
