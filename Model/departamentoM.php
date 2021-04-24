@@ -56,7 +56,7 @@ class DepartamentoM{
 
         if($pdo -> execute()){
 
-            return true;
+            return true; 
         }else{
 
             return false;

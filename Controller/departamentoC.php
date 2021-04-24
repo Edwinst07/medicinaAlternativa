@@ -43,29 +43,13 @@ class DepartamentoC{
             $datosC = array('codigo'=>$_POST["codigo"], 'departamento'=>$_POST["departamento"]);
             $tablaBD = "departamento";
 
-            $res = DepartamentoM::ConsultDepartamentoM($datosC,$tablaBD);
+            return $res = DepartamentoM::ConsultDepartamentoM($datosC,$tablaBD);
 
             if(!$res){
                 echo "<script>alert('Consulta No encontrada!!')</script>";
             }
 
         }
-
-        echo '<tr>
-                <td><label for="id">C&oacute;digo:</label></td>
-                <td>
-                    <input type="text" name="codigo" value="'.$res["idDepartamento"].'" id="number" title="Campo numerico"
-                    class="form-control">
-                    <small class="form-text text-danger" id="msgNumber"></small>
-                </td>
-            </tr>
-            <tr>
-                <td><label for="dep">Descripci&oacute;n:</label></td>
-                <td><input type="text" name="departamento" value="'.$res["nombreDepartamento"].'" id="text" title="Campo de texto"
-                    class="form-control">
-                    <small class="form-text text-danger" id="msgText"></small>
-                </td>
-            </tr>';
 
     }
 

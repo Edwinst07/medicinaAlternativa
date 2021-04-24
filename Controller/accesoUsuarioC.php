@@ -7,8 +7,9 @@ class AccesoUsuarioC{
 
         if(isset($_POST["insert"])){
 
-            $datosC = array('cedula' => $_POST["cedula"],'nombre' => $_POST["nombre"], 'pass' => $_POST["pass"], 'perfil' => $_POST["perfil"]);
-            $tablaBD = "accesoUsuario";
+            $datosC = array('cedula' => $_POST["cedula"],'nombre' => $_POST["nombre"], 
+                            'pass' => $_POST["pass"], 'perfil' => $_POST["perfil"]);
+            $tablaBD = "accesousuario";
 
             $consult = AccesoUsuarioM::ConsultAccesoUsuarioM($datosC,$tablaBD);
 
@@ -40,10 +41,10 @@ class AccesoUsuarioC{
 
         if(isset($_POST["consult"])){
 
-            $datosC = array('cedula' => $_POST["cedula"],'nombre' => $_POST["nombre"]);
+            $datosC = array('cedula' => $_POST["cedula"], 'nombre' => $_POST["nombre"]);
             $tablaBD = "accesoUsuario";
 
-            $res = AccesoUsuarioM::ConsultAccesoUsuarioM($datosC,$tablaBD);
+            return $res = AccesoUsuarioM::ConsultAccesoUsuarioM($datosC,$tablaBD);
 
             if(!$res){
                 echo "<script>alert('Consulta No encontrada!!')</script>";
@@ -51,65 +52,11 @@ class AccesoUsuarioC{
 
         }
 
-        echo '<tr>
-                <td><label for="cedula">Cedula:</label></td>
-                <td>
-                    <input type="text" id="number" name="cedula" value="'.$res["cedula"].'"
-                    pattern="(^(?:\+|-)?\d+$)" title="Campo numerico" class="form-control">
-                    <small class="form-text text-danger" id="msgNumber"></small>
-                </td>
-            </tr>
-            <tr>
-                <td><label for="name">Nombre:</label></td>
-                <td>
-                    <input type="text" name="nombre" id="text" value="'.$res["nombre"].'" title="solo se permite texto." 
-                    pattern="(^[a-zA-Z Á]{3,30}$)" class="form-control">
-                    <small class="form-text text-danger" id="msgText"></small>
-                </td>
-            </tr>
-            <tr>
-                <td><label for="password">Contraseña:</label></td>
-                <td>
-                    <input type="password" name="pass" id="pass" value="'.$res["password"].'" title="Minimo 3 caracteres"
-                    class="form-control">
-                    <small class="form-text text-danger" id="msgPass"></small>
-                </td>
-            </tr>
-            <tr>
-                <td><label for="perfil">Perfil:</label></td>';
+    }
 
-                $res2 = AccesoUsuarioM::SelectPerfilM();
-        
-        echo '<td>
-            <Select id="select" name="perfil" class="form-select">
-                <option value="">'.((isset($_POST["consult"]))?$res["nombrePerfil"] : 'Perfil').'</option>';
-    
-                foreach ($res2 as $key => $value) {
-    
-                    echo '<option value="'.$value["idPerfil"].'">'.$value["nombrePerfil"].'</option>';
-    
-                }
-    
-          echo '</Select>
-                <small class="form-text text-danger" id="msgSelect"></small>
-                </td>
-            </tr>';
+    public function SelectPerfilC(){
 
-
-        if(!$res2){
-
-            echo '<td>
-                    <Select id="select" name="perfil" class="form-select">
-                        <option value="">Perfil</option>
-                        <option value="">No hay registro</option>
-                    </Select>
-                    <small class="form-text text-danger" id="msgSelect"></small>
-                   </td>
-                   </tr>';
-
-        }
-    
-
+        return  $res2 = AccesoUsuarioM::SelectPerfilM(); 
     }
 
     public function DeleteAccesoUsuarioC(){

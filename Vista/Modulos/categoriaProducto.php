@@ -7,10 +7,29 @@
                                     <table class="table ">
                                         <?php
                                         
-                                        $consult = new CategoriaProductoC();
-                                        $consult -> ConsultCategoriaProductoC();
+                                        $res = CategoriaProductoC::ConsultCategoriaProductoC();
                                         
                                         ?>
+
+                                        <tr>
+                                            <td><label for="id">C&oacute;digo:</label></td>
+                                            <td>
+                                                <input type="text" id="number" name="codigo" class="form-control" value="<?php echo $res["idCategoria"];?>"
+                                                        title="Ingresar tipo numerico. Ejemplo: 1,2,3...">
+                                                <small class="form-text text-danger" id="msgNumber"></small>
+                                            </td> 
+                                                        
+                                        </tr>
+                                        <tr>
+                                            <td><label for="catProd">Descripci&oacute;n:</label></td>
+                                             <td>
+                                                <input type="text" id="text" name="catProd" class="form-control" value="<?php echo $res["nombreCategoria"];?>"
+                                                    title="Ingresar tipo Texto. Ejemplo: Sedantes, Diur&eacute;tico, ...">
+                                                <small class="form-text text-danger" id="msgText"></small>
+                                            </td>
+                                                        
+                                        </tr>
+
                                         <tr class="table">
                                             <td style="color:tomato;">
                                             

@@ -2,7 +2,7 @@
 
 class ModoPagoC{
 
-    public function InsertModoPagoC(){
+    public function InsertModoPagoC(){ 
 
         if(isset($_POST["insert"])){
 
@@ -42,7 +42,7 @@ class ModoPagoC{
             $datosC = array('codigo'=>$_POST["codigo"], 'modoPago'=>$_POST["modoPago"]);
             $tablaBD = "modopago";
 
-            $res = ModoPagoM::ConsultModoPagoM($datosC,$tablaBD);
+            return $res = ModoPagoM::ConsultModoPagoM($datosC,$tablaBD);
 
             if(!$res){
 
@@ -50,23 +50,6 @@ class ModoPagoC{
             }
 
         }
-
-        echo '<tr>
-                <td><label for="id">C&oacute;digo:</label></td>
-                <td>
-                    <input type="text" name="codigo" value="'.$res["idModoPago"].'" id="number" 
-                    title="Campo numerico" class="form-control">
-                    <small class="form-text text-danger" id="msgNumber"></small>
-                </td>
-            </tr>
-            <tr>
-                <td><label for="desc">Descripci&oacute;n:</label></td>
-                <td>
-                    <input type="text" name="modoPago" id="text" value="'.$res["nombrePago"].'" 
-                    title="Campo de texto" class="form-control">
-                    <small class="form-text text-danger" id="msgText"></small>
-                </td>
-            </tr>';
 
     }
 

@@ -44,30 +44,13 @@ class PerfilC{
             $datosC = array('idPerfil' => $_POST["id"], 'perfil' => $_POST["perfil"]);
             $tablaBD = "perfil";
 
-            $res = PerfilM::ConsultPerfilM($datosC,$tablaBD);
+            return $res = PerfilM::ConsultPerfilM($datosC,$tablaBD);
 
             if(!$res){
                 echo "<script>alert('Consulta No encontrada!!')</script>";
             }
 
         }
-
-        echo '  <tr>
-                    <td><label for="id">C&oacute;digo:</label></td>
-                    <td>
-                        <input type="text" name="id" id="number" value="'. $res["idPerfil"].'" 
-                        pattern="(^(?:\+|-)?\d+$)" title="Campo numerico" class="form-control">
-                        <small class="form-text text-danger" id="msgNumber" ></small>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="perfil">Descripci&oacute;n:</label></td>
-                    <td>
-                        <input type="text" name="perfil" id="text" value="'. $res["nombrePerfil"].'"
-                        pattern="(^[a-zA-Z Á]{3,30}$)" title="Campo de texto, desde 3 caracteres" class="form-control">
-                        <small class="form-text text-danger" id="msgText" ></small>
-                    </td>
-                </tr>';
                         
     }
 

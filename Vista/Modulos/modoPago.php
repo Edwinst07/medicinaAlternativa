@@ -1,6 +1,6 @@
 
 				<h3>Modo de pago</h3>
-                        <div class="cont-der">
+                        <div class="cont-der"> 
                             <form method="POST">
 
                                 <div style="width: 50%;">
@@ -8,13 +8,28 @@
                                 
                                         <?php
                                         
-                                        $consult = new ModoPagoC();
-                                        $consult -> ConsultModoPagoC();
+                                        $res = ModoPagoC::ConsultModoPagoC();
                                         
                                         ?>
+                                        <tr>
+                                            <td><label for="id">C&oacute;digo:</label></td>
+                                            <td>
+                                                <input type="text" name="codigo" value="<?php echo $res["idModoPago"];?>" id="number" 
+                                                title="Campo numerico" class="form-control">
+                                                <small class="form-text text-danger" id="msgNumber"></small>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="desc">Descripci&oacute;n:</label></td>
+                                            <td>
+                                                <input type="text" name="modoPago" id="text" value="<?php echo $res["nombrePago"];?>" 
+                                                title="Campo de texto" class="form-control">
+                                                <small class="form-text text-danger" id="msgText"></small>
+                                            </td>
+                                        </tr>
 
                                         <tr class="table">
-                                            <td style="color:tomato;">
+                                            <td style="color:tomato;" colspan="3">
                                             
                                             <?php
                                             

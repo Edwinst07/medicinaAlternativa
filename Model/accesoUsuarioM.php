@@ -4,7 +4,7 @@ class AccesoUsuarioM{
 
     static public function InsertAccesoUsuarioM($datosC,$tablaBD){
 
-        $pdo = ConexionBD::cBD()->prepare("INSERT INTO `medicinaalternativa`.$tablaBD(`cedula`,`nombre`,`password`,`perfil`) 
+        $pdo = ConexionBD::cBD()->prepare("INSERT INTO `medicinaalternativa`.$tablaBD(`cedula`, `nombre`, `password`, `idPerfil`) 
                                             VALUES (:cedula, :nombre, :pass, :perfil)");
 
         $pdo -> bindParam(':cedula', $datosC["cedula"], PDO::PARAM_STR);
@@ -42,7 +42,8 @@ class AccesoUsuarioM{
     static public function ConsultAccesoUsuarioM($datosC,$tablaBD){
 
         $pdo = ConexionBD::cBD()->prepare("SELECT a.`cedula`, a.`nombre`, a.`password`, a.`perfil`, p.`nombrePerfil`  
-                                    FROM `medicinaalternativa`.accesousuario AS a, `medicinaalternativa`.perfil AS p  
+                                    FROM `medicinaalternativa`.accesousuario AS a, 
+                                         `medicinaalternativa`.perfil AS p  
                                     WHERE a.`perfil` = p.`idPerfil` AND  (a.`cedula`=:cedula OR a.`nombre`=:nombre)
                                     AND a.`estado`=0");
 

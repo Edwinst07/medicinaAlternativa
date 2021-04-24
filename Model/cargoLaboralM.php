@@ -58,7 +58,7 @@ class CargoLaboralM{
             return false;
         }
 
-        $pdo -> close;
+        $pdo -> close; 
 
     }
 

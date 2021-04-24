@@ -6,6 +6,10 @@
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="Vista/css/style.css">
     <link rel="shortcut icon" href="Vista/img/icon.png" />
+    <script type="text/javascript" src="Vista/js/validar.js"></script>
+    <script src="Vista/js/jquery-3.6.0.js"></script>
+    
+    
 </head>
 <body>
 	<div class="contenedor">
@@ -49,6 +53,7 @@
             </tr>
 		</table>
 	</div>
+    
 </body>
 </html>
 

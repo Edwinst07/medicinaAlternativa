@@ -11,6 +11,8 @@ require_once "Controller/categoriaProductoC.php";
 require_once "Controller/productoC.php";
 require_once "Controller/municipioC.php";
 require_once "Controller/sucursalC.php";
+require_once "Controller/clienteC.php";
+require_once "Controller/empleadoC.php";
 
 require_once "Model/rutasM.php";
 require_once "Model/perfilM.php";
@@ -22,6 +24,8 @@ require_once "Model/categoriaProductoM.php";
 require_once "Model/productoM.php";
 require_once "Model/municipioM.php";
 require_once "Model/sucursalM.php";
+require_once "Model/clienteM.php";
+require_once "Model/empleadoM.php";
 
 $rutas = new RutasController();
 $rutas -> Plantilla();

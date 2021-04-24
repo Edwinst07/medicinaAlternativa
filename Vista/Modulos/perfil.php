@@ -8,10 +8,26 @@
                                         
                                         <?php
 
-                                        $consult = new PerfilC();
-                                        $consult -> ConsultPerfilC();
+                                        $res = PerfilC::ConsultPerfilC();
 
                                         ?>
+
+                                        <tr>
+                                            <td><label for="id">C&oacute;digo:</label></td>
+                                            <td>
+                                                <input type="text" name="id" id="number" value="<?php echo $res["idPerfil"]; ?>" 
+                                                    pattern="(^(?:\+|-)?\d+$)" title="Campo numerico" class="form-control">
+                                                <small class="form-text text-danger" id="msgNumber" ></small>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="perfil">Descripci&oacute;n:</label></td>
+                                            <td>
+                                                <input type="text" name="perfil" id="text" value="<?php echo $res["nombrePerfil"]; ?>"
+                                                    pattern="(^[a-zA-Z Á]{3,30}$)" title="Campo de texto, desde 3 caracteres" class="form-control">
+                                                <small class="form-text text-danger" id="msgText" ></small>
+                                            </td>
+                                        </tr>
 
                                     </table>
                                     <table>
@@ -46,29 +62,6 @@
                             <br>
                             <br>
                             <br>
-                            <!-- <form method="POST">
-
-                                <table class="table ">
-                                <tr>
-                                    <td><b><label for="desc" style="float:right;">Consulta avanzada:</label></b></td>
-                                    <td>
-                                        <input type="text" name="desc" class="form-control"
-                                        pattern="(^[a-zA-Z Á]{1,30}$)" title="Ingrese las iniciales de la descripción">
-                                     </td>
-                                </tr>
-                                </table>
-                                <table class="table table-success">
-
-                                    <?php
-
-                                        // $consultAvanc = new PerfilC();
-                                        // $consultAvanc -> ConsultAvancC();
-
-                                    ?>
-
-                                </table>
-
-                            </form> -->
 
                             <script type="text/javascript" src="Vista/js/validar.js"></script>
                         </div>

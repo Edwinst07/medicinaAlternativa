@@ -7,12 +7,27 @@
                                     <table class="table ">
                                         <?php
 
-                                            $consult = new DepartamentoC();
-                                            $consult -> ConsultDepartamentoC();
+                                            $res = DepartamentoC::ConsultDepartamentoC();
 
                                         ?>
+                                        <tr>
+                                            <td><label for="id">C&oacute;digo:</label></td>
+                                            <td>
+                                                <input type="text" name="codigo" value="<?php echo $res["idDepartamento"];?>" id="number" title="Campo numerico"
+                                                class="form-control">
+                                                <small class="form-text text-danger" id="msgNumber"></small>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        <td><label for="dep">Descripci&oacute;n:</label></td>
+                                        <td><input type="text" name="departamento" value="<?php echo $res["nombreDepartamento"];?>" id="text" title="Campo de texto"
+                                            class="form-control">
+                                            <small class="form-text text-danger" id="msgText"></small>
+                                        </td>
+                                        </tr>
+
                                         <tr class="table">
-                                            <td style="color:tomato;">
+                                            <td style="color:tomato;" colspan="2">
                                                 <?php
 
                                                     $crud = new DepartamentoC();

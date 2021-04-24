@@ -41,7 +41,7 @@ class CargoLaboralC{
             $datosC = array('codigo'=>$_POST["codigo"], 'desc'=>$_POST["descripcion"]);
             $tablaBD = "cargolaboral";
 
-            $res = CargoLaboralM::ConsultCargoLaboralM($datosC,$tablaBD);
+            return $res = CargoLaboralM::ConsultCargoLaboralM($datosC,$tablaBD);
 
             if(!$res){
 
@@ -49,23 +49,6 @@ class CargoLaboralC{
             }
 
         }
-
-        echo '<tr>
-                    <td><label for="id">C&oacute;digo:</label></td>
-                    <td>
-                        <input type="text" name="codigo" id="number" value="'.$res["idCargo"].'" title="Campo numerico."
-                        class="form-control">
-                        <small class="form-text text-danger" id="msgNumber"></small>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="cl">Descripci&oacute;n:</label></td>
-                    <td>
-                        <input type="text" name="descripcion" id="text" value="'.$res["nombreCargo"].'" title="solo se permite texto." 
-                        class="form-control">
-                        <small class="form-text text-danger" id="msgText"></small>
-                    </td>
-                </tr>';
                     
     }
 
@@ -74,7 +57,7 @@ class CargoLaboralC{
         if(isset($_POST["delete"])){
 
             $datosC = $_POST["codigo"];
-            $tablaBD = "cargolaboral";
+            $tablaBD = "cargolaboral"; 
 
             $res = CargoLaboralM::DeleteCargoLaboralM($datosC,$tablaBD);
 
