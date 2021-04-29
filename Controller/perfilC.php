@@ -60,13 +60,20 @@ class PerfilC{
 
             $datosC = $_POST["id"];
             $tablaBD = "perfil";
-    
-            $res = PerfilM::DeletePerfilM($datosC,$tablaBD);
-    
-            if ($res) {
-                echo '<script>alert("Se elimino correctamente  el registro N.'.$datosC.'")</script>';
+
+            if(PerfilM::ConsultInAccesoUsuario($datosC)){
+
+                echo 'No se pudo eliminar: Cod.'.$datosC.' se encuentra en uso en "Acceso Usuario".';
             }else{
-                echo 'No se elimino el registro N.'.$datosC;
+
+                $res = PerfilM::DeletePerfilM($datosC,$tablaBD);
+    
+                if ($res) {
+                    echo '<script>alert("Se elimino correctamente  el registro N.'.$datosC.'")</script>';
+                }else{
+                    echo 'No se elimino el registro N.'.$datosC;
+                }
+
             }
 
         }

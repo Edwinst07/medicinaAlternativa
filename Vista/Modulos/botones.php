@@ -1,6 +1,6 @@
                                         <tr>
-                                            <td colspan="3">
-                                            <input type="reset" name="clear" class="btn btn-outline-primary btn-sm" value="Limpiar" >
+                                            <td colspan="4">
+                                                <input type="reset" name="clear" class="btn btn-outline-primary btn-sm" value="Limpiar" >
                                                 <input type="submit" name="insert" class="btn btn-outline-success btn-sm" value="Agregar" onclick="return validar('Agregar');">
                                                 <input type="submit" name="consult" class="btn btn-outline-primary btn-sm" value="Consultar" onclick="return validar('Consultar');">
                                          <?php

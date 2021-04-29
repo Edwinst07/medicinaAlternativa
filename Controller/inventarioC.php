@@ -1,26 +1,26 @@
 <?php
 
-class ProductoC{
+class InventarioC{
 
-    public function InsertProductoC(){
+    public function InsertInventarioC(){ 
 
         if(isset($_POST["insert"])){
 
             $datosC = array('id'=>$_POST["id"], 'nombre'=>$_POST["nombre"], 'costo'=>$_POST["costo"], 
-                            'descrip'=>$_POST["descripcion"], 'categoria'=>$_POST["categoria"], 'uniMedida'=>$_POST["uniMedida"], 
-                            'existe'=>$_POST["existe"], 'fechaFabrica'=>$_POST["fechaFabrica"], 'fechaVenc'=>$_POST["fechaVenc"], 
-                            'invima'=>$_POST["invima"], 'precioVenta'=>$_POST["precioVenta"]);
+                            'descrip'=>$_POST["descripcion"], 'medida'=>$_POST["medida"], 'cantMedida'=>$_POST["cantMedida"],
+                            'cantidadProd'=>$_POST["cantidadProd"], 'porGanancia'=>$_POST["porGanancia"], 
+                            'existe'=>$_POST["existe"], 'forma'=>$_POST["forma"]);
 
-            $tablaBD = "productos";
+            $tablaBD = "inventario";
 
-            $consult = ProductoM::ConsultProductoM($datosC,$tablaBD);
+            $consult = InventarioM::ConsultInventarioM($datosC,$tablaBD);
 
             if($consult){
 
                 echo 'El codigo o nombre ya esta en Base de datos!!';
             }else{
 
-                $res = ProductoM::InsertProductoM($datosC,$tablaBD);
+                $res = InventarioM::InsertInventarioC($datosC,$tablaBD);
 
                 if($res){
     
@@ -36,16 +36,16 @@ class ProductoC{
         
     }
 
-    public function ConsultProductoC(){
+    public function ConsultInventarioC(){
 
         global $res;
 
         if(isset($_POST["consult"])){
 
             $datosC = array('id'=>$_POST["id"], 'nombre'=>$_POST["nombre"]);
-            $tablaBD = "productos";
+            $tablaBD = "inventario";
     
-            return $res = ProductoM::ConsultProductoM($datosC,$tablaBD);
+            return $res = InventarioM::ConsultInventarioM($datosC,$tablaBD);
 
             if(!$res){
 
@@ -56,19 +56,14 @@ class ProductoC{
                 
     }
 
-    public function CategoriaProductoC(){
-
-        return ProductoM::CategoriaProductoM();
-    }
-
-    public function DeleteProductoC(){
+    public function DeleteInventarioC(){
 
         if(isset($_POST["delete"])){
 
             $datosC = $_POST["id"];
-            $tablaBD = "productos";
+            $tablaBD = "inventario";
     
-            $res = ProductoM::DeleteProductoM($datosC,$tablaBD);
+            $res = InventarioM::DeleteInventarioM($datosC,$tablaBD);
     
             if($res){
     
@@ -84,18 +79,18 @@ class ProductoC{
 
     }
 
-    public function UpdateProductoC(){
+    public function UpdateInventarioC(){
 
         if(isset($_POST["update"])){
 
             $datosC = array('id'=>$_POST["id"], 'nombre'=>$_POST["nombre"], 'costo'=>$_POST["costo"], 
-            'descrip'=>$_POST["descripcion"], 'categoria'=>$_POST["categoria"], 'uniMedida'=>$_POST["uniMedida"], 
-            'existe'=>$_POST["existe"], 'fechaFabrica'=>$_POST["fechaFabrica"], 'fechaVenc'=>$_POST["fechaVenc"], 
-            'invima'=>$_POST["invima"], 'precioVenta'=>$_POST["precioVenta"]);
+                            'descrip'=>$_POST["descripcion"], 'medida'=>$_POST["medida"], 'cantMedida'=>$_POST["cantMedida"],
+                            'cantidadProd'=>$_POST["cantidadProd"], 'porGanancia'=>$_POST["porGanancia"], 
+                            'existe'=>$_POST["existe"], 'forma'=>$_POST["forma"]);
 
-            $tablaBD = "productos";
+            $tablaBD = "inventario";
 
-            $res = ProductoM::UpdateProductoM($datosC,$tablaBD);
+            $res = InventarioM::UpdateInventarioM($datosC,$tablaBD);
 
             if($res){
 
@@ -103,11 +98,22 @@ class ProductoC{
 
             }else{
 
-                echo 'No se actualizo el registro!!!';
+                echo 'No se actualiz&oacute; el registro!!!';
 
             }
 
         }
+
+    }
+
+    public function MedidaC(){
+
+        return InventarioM::MedidaC();
+    }
+
+    public function FormaC(){
+
+        return InventarioM::FormaM();
 
     }
 

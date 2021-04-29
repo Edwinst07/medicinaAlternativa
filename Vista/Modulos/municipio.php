@@ -58,7 +58,7 @@
                                                     
                                                     ?>
                                                 </select>
-                                                <small class="form-text text-danger" id="msgText"></small>
+                                                <small class="form-text text-danger" id="msgSelect"></small>
                                             </td>
                                         </tr>
 

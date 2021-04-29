@@ -28,11 +28,11 @@ table .menu .imagen, img{
 }
 
 .menu{
-	width: 20%;
+	width: 15%;
 	height: auto;
 	background: #ffff;
     color:green;
-    padding-bottom: 350px;
+    padding-bottom: 250px;
 }
 
 table .td-contenido{

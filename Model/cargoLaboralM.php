@@ -81,6 +81,26 @@ class CargoLaboralM{
 
     }
 
+    public function ConsultInEmpleado($idCargoLaboral){
+
+        $pdo = ConexionBD::cBD()->prepare("SELECT `cedula`, `nombre1`, `nombre2`, `apellido1`, `apellido2`, 
+                                        `genero`, `direccion`, `telefono`, `movil`, `correo`, `fecha_nacimiento`, 
+                                        `idSucursal`, `estado` 
+                                        FROM `medicinaalternativa`.`empleado` 
+                                        WHERE `idCargoLaboral`=:id");
+
+        $pdo -> bindParam(":id", $idCargoLaboral, PDO::PARAM_STR);
+
+        if($pdo -> execute()){
+
+            return true;
+        }else{
+
+            return false;
+        }
+
+    }
+
 }
 
 ?>

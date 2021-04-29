@@ -85,6 +85,26 @@ class CategoriaProductoM{
 
     }
 
+    public function ConsultInCompraProd($idCP){
+
+        $pdo = ConexionBD::cBD()->prepare("SELECT * FROM `medicinaalternativa`.`compra_prod` 
+                                            WHERE `categoriaprod`=:id");
+
+        $pdo -> bindParam(":id", $idCP, PDO::PARAM_STR);
+
+        if($pdo -> execute()){
+
+            return true;
+
+        }else{
+
+            return false;
+        }
+
+        $pdo ->close;
+
+    }
+
 }
 
 ?>

@@ -14,7 +14,7 @@ function validar(Boton){
 
 		let text = document.getElementById("text");
 		let msgText = document.getElementById("msgText");
-		let rgxText = /^[a-zA-Z Á]*{2,30}$/;
+		let rgxText = /^[A-Za-z0-9\s]+$/g;
 
 		if (number.value.trim() == "" || number.value.length == 0) {
 			if(Boton =="Consultar")
@@ -32,17 +32,17 @@ function validar(Boton){
 				validacion = false;
 			}
 		}
-		// else{
+		else{
 			
-		// 	if(Boton=="Consultar")
-		// 	{
-		// 		if (text.value.trim() != "") {
-		// 			msgNumber.innerHTML = "Para la consulta, solamente debe ingresar uno de los campos.<br>";
-		// 			validacion = false;
-		// 		}
-		// 	}
+			if(Boton=="Consultar")
+			{
+				if (text.value.trim() != "") {
+					msgNumber.innerHTML = "Para la consulta, solamente debe ingresar uno de los campos.<br>";
+					validacion = false;
+				}
+			}
 			
-		// }
+		}
 
 		if(Boton !="Consultar")
 		{
@@ -73,16 +73,16 @@ function validar(Boton){
 				validacion = false;
 			}
 		}
-		// else{
-		// 	if(Boton =="Consultar")
-		// 	{
-		// 		if (number.value.trim() != "") {
-		// 			msgText.innerHTML = "Para la consulta, solamente debe ingresar uno de los campos.<br>";
-		// 			validacion = false;
-		// 		}
-		// 	}
+		else{
+			if(Boton =="Consultar")
+			{
+				if (number.value.trim() != "") {
+					msgText.innerHTML = "Para la consulta, solamente debe ingresar uno de los campos.<br>";
+					validacion = false;
+				}
+			}
 			
-		// }
+		}
 
 		if(Boton !="Consultar")
 		{
@@ -162,7 +162,15 @@ function validar(Boton){
 			}
 			
 			if(Boton != "Consultar"){
-				if (!rgxDate.test(date.value)){
+				let fechaActual = new Date();
+				let fechaIngreso = new Date(date.value);
+				
+				if(fechaIngreso > fechaActual){
+					msgDate.innerHTML += "La fecha es Mayor al actual<br>"; 
+					validacion = false;
+				}
+
+				if(!rgxDate.test(date.value)){
 					msgDate.innerHTML += "No esta con el formato establecido<br>"; 
 					validacion = false;
 				}
@@ -172,8 +180,6 @@ function validar(Boton){
 
 			// }
 
-
-			
 		}
 
 		let select = "";

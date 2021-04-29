@@ -50,16 +50,23 @@ class CategoriaProductoC{
 
             $datosC = $_POST["codigo"];
             $tablaBD = "categoriaProd";
-    
-            $res = CategoriaProductoM::DeleteCategoriaProductoM($datosC,$tablaBD);
-    
-            if($res){
-    
-                echo '<script>alert("Se elimino correctamente  el registro N.'.$datosC.'")</script>';
+
+            if(CategoriaProductoM::ConsultInCompraProd($datosC)){
+
+                echo 'No se pudo eliminar: Cod.'.$datosC.' se encuentra en uso en "Compra Producto".';
             }else{
+
+                $res = CategoriaProductoM::DeleteCategoriaProductoM($datosC,$tablaBD);
     
-                echo 'No se elimino el registro Cod.'.$datosC;
-    
+                if($res){
+        
+                    echo '<script>alert("Se elimino correctamente  el registro N.'.$datosC.'")</script>';
+                }else{
+        
+                    echo 'No se elimino el registro Cod.'.$datosC;
+        
+                }
+
             }
 
         }

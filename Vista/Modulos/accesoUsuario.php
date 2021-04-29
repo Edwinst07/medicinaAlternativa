@@ -31,8 +31,8 @@
                                     <tr>
                                         <td><label for="password">Contraseña:</label></td>
                                         <td>
-                                            <input type="password" name="pass" id="pass" value="<?php echo $res["password"];?>" title="Minimo 3 caracteres"
-                                                class="form-control">
+                                            <input type="password" name="pass" id="pass" value="<?php echo $res["password"];?>" 
+                                            title="Minimo 5 caracteres con numeros y letras" class="form-control">
                                                 <small class="form-text text-danger" id="msgPass"></small>
                                         </td>
                                     </tr>
@@ -87,5 +87,5 @@
                                 </div>
 
                             </form>
-                            <!-- <script type="text/javascript" src="Vista/js/validar.js"></script> -->
+                            <script type="text/javascript" src="Vista/js/validar.js"></script> 
                         </div>

@@ -59,12 +59,19 @@ class CargoLaboralC{
             $datosC = $_POST["codigo"];
             $tablaBD = "cargolaboral"; 
 
-            $res = CargoLaboralM::DeleteCargoLaboralM($datosC,$tablaBD);
+            if(CargoLaboralM::ConsultInEmpleado($datosC)){
 
-            if ($res) {
-                echo '<script>alert("Se elimino correctamente  el registro N.'.$datosC.'")</script>';
+                echo 'No se pudo eliminar: C&oacute;digo '.$datosC.' se encuentra en uso en "Empleado".';
             }else{
-                echo 'No se elimino el registro N.'.$datosC;
+
+                $res = CargoLaboralM::DeleteCargoLaboralM($datosC,$tablaBD);
+
+                if ($res) {
+                    echo '<script>alert("Se elimino correctamente  el registro N.'.$datosC.'")</script>';
+                }else{
+                    echo 'No se elimino el registro N.'.$datosC;
+                }
+
             }
 
         }

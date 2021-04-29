@@ -60,15 +60,22 @@ class DepartamentoC{
             $datosC = array('codigo'=>$_POST["codigo"], 'departamento'=>$_POST["departamento"]);
             $tablaBD = "departamento";
 
-            $res = DepartamentoM::DeleteDepartamentoM($datosC,$tablaBD);
+            if(DepartamentoM::ConsultInMunicipio($datosC["codigo"])){
 
-            if($res){
-                
-                echo '<script>alert("Se elimino correctamente  el registro N.'.$datosC["codigo"].'")</script>';
+                echo 'No se pudo eliminar: '.$datosC["departamento"].' se encuentra en uso en "Municipio".';
             }else{
 
-                    echo 'No se elimino el registro N.'.$datosC["codigo"];
-            }   
+                $res = DepartamentoM::DeleteDepartamentoM($datosC,$tablaBD);
+
+                if($res){
+                    
+                    echo '<script>alert("Se elimino correctamente  el registro N.'.$datosC["codigo"].'")</script>';
+                }else{
+    
+                        echo 'No se elimino el registro N.'.$datosC["codigo"];
+                } 
+
+            }  
 
         }
     }

@@ -80,6 +80,26 @@ class PerfilM{
 
     }
 
+    public function ConsultInAccesoUsuario($idAU){
+
+        $pdo = ConexionBD::cBD()->prepare("SELECT * FROM `medicinaalternativa`.`accesousuario` 
+                                            WHERE `idPerfil`=:id");
+
+        $pdo -> bindParam(":id", $idAU, PDO::PARAM_STR);
+
+        if($pdo -> execute()){
+
+            return true;
+
+        }else{
+            return false;
+        }
+
+        $pdo -> close;
+
+
+    }
+
     // static public function ConsultAvancM($datosC,$tablaBD){
 
     //     $pdo = ConexionBD::cBD()->prepare("SELECT `idPerfil`,`nombrePerfil` 

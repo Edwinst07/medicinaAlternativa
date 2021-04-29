@@ -2,7 +2,7 @@
                         <div class="cont-derecho">
                             <form method="POST">
 
-                                <div style="width: 50%;">
+                                <div style="width: 55%;">
                                     <table class="table ">
 
                                         <?php
@@ -26,7 +26,7 @@
                                             </td>
                                             <td ><label for="name">Segundo nombre:</label></td>
                                             <td ><input type="text" name="nombre2" id="text" value="<?php echo $res["nombre2"]; ?>" 
-                                                 class="form-control">
+                                                 class="form-control" require>
                                                 <small class="form-text text-danger" id="msgText"></small>
                                             </td>
                                         </tr>
@@ -34,12 +34,12 @@
                                         <tr>
                                             <td ><label for="name">Primer apellido:</label></td>
                                             <td ><input type="text" name="apellido1" id="text" value="<?php echo $res["apellido1"]; ?>" 
-                                                 class="form-control">
+                                                 class="form-control" require>
                                                 <small class="form-text text-danger" id="msgText"></small>
                                             </td>
                                             <td><label for="name">Segundo apellido:</label></td>
                                             <td><input type="text" name="apellido2" id="text" value="<?php echo $res["apellido2"]; ?>" 
-                                                class="form-control">
+                                                class="form-control" require>
                                                 <small class="form-text text-danger" id="msgText"></small>
                                             </td>
                                         </tr>
@@ -95,7 +95,7 @@
                                             <td><label for="fechaNacimiento">Fecha nacimiento:</label></td>
                                             <td>
                                                 <input type="date" name="fechaNacimiento" id="date" value="<?php echo $res["fecha_nacimiento"]; ?>" 
-                                                class="form-control">
+                                                max="2010-12-31" class="form-control">
                                                 <small class="form-text text-danger" id="msgDate"></small>
                                             </td>
                                         </tr>

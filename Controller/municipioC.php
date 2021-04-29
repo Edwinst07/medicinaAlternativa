@@ -6,26 +6,32 @@ class MunicipioC{
 
         if(isset($_POST["insert"])){
 
-            $datosC = array('codigo'=>$_POST["codigo"], 'municipio'=>$_POST["municipio"], 'dep'=>$_POST["dep"]);
-            $tablaBD = "municipio";
+            if(!empty($_POST["codigo"])){
 
-            $consult = MunicipioM::ConsultMunicipioM($datosC, $tablaBD);
-
-            if($consult){
-
-                echo 'Nombre o descripci&oacute;n ya encontrado en BD. ';
-            }else{
-
-                $res = MunicipioM::InsertMunicipioM($datosC,$tablaBD);
-
-                if($res){
+                $datosC = array('codigo'=>$_POST["codigo"], 'municipio'=>$_POST["municipio"], 'dep'=>$_POST["dep"]);
+                $tablaBD = "municipio";
     
-                    echo "<script>alert('Se agrego Municipio Correctamente')</script>";
+                $consult = MunicipioM::ConsultMunicipioM($datosC, $tablaBD);
+    
+                if($consult){
+    
+                    echo 'Nombre o descripci&oacute;n ya encontrado en BD. ';
                 }else{
     
-                    echo 'No se agrego!!';
+                    $res = MunicipioM::InsertMunicipioM($datosC,$tablaBD);
+    
+                    if($res){
+        
+                        echo "<script>alert('Se agrego Municipio Correctamente')</script>";
+                    }else{
+        
+                        echo 'No se agrego!!';
+                    }
+    
                 }
 
+            }else{
+                echo 'debe llenar el campo "Codigo"!!';
             }
 
         }

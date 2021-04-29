@@ -4,13 +4,18 @@ class SucursalC{
 
     public function InsertSucursalC(){ 
 
-        if(isset($_POST["insert"])){
+        if(isset($_POST["insert"])){ 
 
             $datosC = array('id'=>$_POST["id"], 'nombre'=>$_POST["nombre"], 'direccion'=>$_POST["direccion"], 
             'tel'=>$_POST["telefono"], 'correo'=>$_POST["correo"], 'nit'=>$_POST["nit"],
             'municipio'=>$_POST["municipio"]);
 
             $tablaBD = "sucursal";
+
+            if(SucursalM::ConsultSucursalM($datosC,$tablaBD)){
+
+                echo '<script>alert("Cod.'.$datosC["id"].' o descripci&oacute;n ya esta registrado!!")</script>';
+            }else{
 
             $res = SucursalM::InsertSucursalM($datosC, $tablaBD);
 
@@ -21,6 +26,10 @@ class SucursalC{
             }else{
                 echo 'No se agrego Sucursal';
             }
+
+            }
+
+
         }
     }
 
@@ -58,15 +67,24 @@ class SucursalC{
             $datosC = $_POST["id"];
             $tablaBD = "sucursal";
 
-            $res = SucursalM::DelectSucursalM($datosC,$tablaBD);
+            if(SucursalM::ConsultInEmpleado($datosC)){
 
-            if($res){
+                echo 'No se pudo eliminar: Cod.'.$datosC.' se encuentra en uso en "Empleado".';
 
-                echo '<script>alert("Se elimino correctamente el registro N.'. $datosC.'")</script>';
             }else{
 
-                echo 'No se elimino registro N.'.$datosC;
+                $res = SucursalM::DelectSucursalM($datosC,$tablaBD);
+
+                if($res){
+    
+                    echo '<script>alert("Se elimino correctamente el registro N.'. $datosC.'")</script>';
+                }else{
+    
+                    echo 'No se elimino registro N.'.$datosC;
+                }
+
             }
+
         }
     }
 

@@ -4,7 +4,7 @@
                         <div class="cont-derecho">
                             <form method="POST">
 
-                                <div style="width: 50%;">
+                                <div style="width: 55%;">
                                     <table class="table ">
 
                                     <?php
@@ -28,7 +28,7 @@
                                 <tr>
                                 <td><label for="dereccion">Direcci&oacute;n:</label></td>
                                     <td>
-                                        <input type="text" name="direccion" id="text" value="<?php echo $res["direccion"];?>" 
+                                        <input type="text" name="direccion" require value="<?php echo $res["direccion"];?>" 
                                         title="Campo numerico, No se permite texto."  class="form-control">
                                         <small class="form-text text-danger" id="msgText"></small>
                                     </td>
@@ -73,6 +73,7 @@
                                            }
                                            
                                            ?>
+                                        </select>
                                     </td>
                                     <td><label for="municipio">Municipio:</label></td>
                                     <td>
@@ -86,12 +87,11 @@
                                             </option>
 
                                             </select>
-                                            <small class="form-text text-danger" id="msgSelect"></small>
                                     </td>
                                 </tr>
 
                                         <tr class="table">
-                                            <td style="color:tomato;">
+                                            <td style="color:tomato;" colspan="3">
                                                 <?php
                                                 
                                                 $crud = new SucursalC();

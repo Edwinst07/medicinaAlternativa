@@ -85,6 +85,27 @@ class DepartamentoM{
         $pdo -> close;
     }
 
+    public function ConsultInMunicipio($idDep){
+
+        $pdo = ConexionBD::cBD()->prepare("SELECT `id`, `idMunicipio`, `nombre`, `estado` 
+                                            FROM `medicinaalternativa`.`municipio` 
+                                            WHERE `idDep`=:id");
+
+        $pdo -> bindParam(":id", $idDep, PDO::PARAM_STR);
+
+        
+        if($pdo -> execute()){
+
+            return true;
+        }else{
+
+            return false;
+        }
+
+        $pdo -> close;
+
+    }
+
 }
 
 ?>
