@@ -6,30 +6,36 @@ class InventarioC{
 
         if(isset($_POST["insert"])){
 
-            $datosC = array('id'=>$_POST["id"], 'nombre'=>$_POST["nombre"], 'costo'=>$_POST["costo"], 
-                            'descrip'=>$_POST["descripcion"], 'medida'=>$_POST["medida"], 'cantMedida'=>$_POST["cantMedida"],
-                            'cantidadProd'=>$_POST["cantidadProd"], 'porGanancia'=>$_POST["porGanancia"], 
-                            'existe'=>$_POST["existe"], 'forma'=>$_POST["forma"]);
+            if(isset($_POST["descripcion"]) && isset($_POST["costo"]) && isset($_POST["medida"]) && 
+               isset($_POST["cantMedida"]) && isset($_POST["cantidadProd"]) && isset($_POST["porGanancia"]) && isset($_POST["existe"])){
 
-            $tablaBD = "inventario";
+                $datosC = array('id'=>$_POST["id"], 'nombre'=>$_POST["nombre"], 'costo'=>$_POST["costo"], 
+                                'descrip'=>$_POST["descripcion"], 'medida'=>$_POST["medida"], 'cantMedida'=>$_POST["cantMedida"],
+                                'cantidadProd'=>$_POST["cantidadProd"], 'porGanancia'=>$_POST["porGanancia"], 
+                                'existe'=>$_POST["existe"], 'forma'=>$_POST["forma"], 'image'=>$_POST["image"]);
 
-            $consult = InventarioM::ConsultInventarioM($datosC,$tablaBD);
+                $tablaBD = "inventario";
 
-            if($consult){
+                $consult = InventarioM::ConsultInventarioM($datosC,$tablaBD);
 
-                echo 'El codigo o nombre ya esta en Base de datos!!';
-            }else{
+                if($consult){
 
-                $res = InventarioM::InsertInventarioC($datosC,$tablaBD);
-
-                if($res){
-    
-                    echo "<script>alert('Se agrego producto Correctamente')</script>";
+                    echo 'El codigo o nombre ya esta en Base de datos!!';
                 }else{
-    
-                    echo 'No se agrego producto';
-                }
 
+                    $res = InventarioM::InsertInventarioC($datosC,$tablaBD);
+
+                    if($res){
+        
+                        echo "<script>alert('Se agrego producto Correctamente')</script>";
+                    }else{
+        
+                        echo 'No se agrego producto';
+                    }
+
+                }
+            }else{
+                echo 'No se agrego: Llenar todos los campos!!';
             }
 
         }
@@ -86,7 +92,7 @@ class InventarioC{
             $datosC = array('id'=>$_POST["id"], 'nombre'=>$_POST["nombre"], 'costo'=>$_POST["costo"], 
                             'descrip'=>$_POST["descripcion"], 'medida'=>$_POST["medida"], 'cantMedida'=>$_POST["cantMedida"],
                             'cantidadProd'=>$_POST["cantidadProd"], 'porGanancia'=>$_POST["porGanancia"], 
-                            'existe'=>$_POST["existe"], 'forma'=>$_POST["forma"]);
+                            'existe'=>$_POST["existe"], 'forma'=>$_POST["forma"], 'image'=>$_POST["image"]);
 
             $tablaBD = "inventario";
 

@@ -83,6 +83,22 @@ class ModoPagoM{
 
     }
 
+    public function MostrarMpM(){
+
+        $pdo = ConexionBD::cBD()->prepare("SELECT * FROM `medicinaalternativa`.`modopago` 
+                                            WHERE `estado`=0");
+
+        if($pdo -> execute()){
+
+            return $pdo -> fetchAll(); 
+        }else{
+
+            return 'No hay Modo pago';
+        }
+
+        $pdo -> close;
+    }
+
 }
 
 ?>

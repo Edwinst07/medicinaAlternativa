@@ -48,6 +48,31 @@
 
                                         ?>
                                     </table>
+                                    <br><br><br>
+
+                                    <table class0="table table-hover">
+                                    <tr>
+                                        <center><b>Listado - Medida</b></center>
+                                    </tr>
+                                    <tr>
+                                        <td><center><b>C&oacute;digo</b></center></td>
+                                        <td><center><b>Medida</b></center></td>
+                                    </tr>
+
+                                    <?php
+                                    
+                                        $medida = MedidaC::MostrarMedidaC();
+
+                                        foreach ($medida as $key => $value) {
+                                            
+                                            echo '<tr>
+                                                    <td><center>'.$value["codigo"].'</center></td>
+                                                    <td><center>'.$value["medida"].'</center></td>
+                                                  </tr>';
+                                        }
+                                    
+                                    ?>
+                                    </table>
                                     
                                 </div>
 

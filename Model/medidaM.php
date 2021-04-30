@@ -84,6 +84,22 @@ class MedidaM{
 
     }
 
+    public function MostrarMedidaM(){
+
+        $pdo = ConexionBD::cBD()->prepare("SELECT * FROM `medicinaalternativa`.`medida` 
+                                            WHERE `estado`=0");
+
+        if($pdo ->execute()){
+
+            return $pdo -> fetchAll();
+        }else{
+
+            return 'No hay Medida';
+        }
+
+        $pdo -> close;
+    }
+
 }
 
 ?>

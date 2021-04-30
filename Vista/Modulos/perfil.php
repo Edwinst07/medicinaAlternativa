@@ -54,6 +54,28 @@
 
                                         ?>
                                     </table>
+                                    <br><br><br>
+                                    <table class="table table-hover">
+                                    <tr><center><b>Todos los perfiles</b></center></tr>
+                                    <tr>
+                                    <td><center><b>C&oacute;digo</b></center></td>
+                                    <td><center><b>Perfil</b></center></td>
+                                    </tr>
+                                    <?php
+
+                                    $perfil = PerfilC::MostrarPerfilesC();
+
+                                    foreach ($perfil as $key => $value) {
+                                        echo '<tr>
+                                                <td><center>'.$value["idPerfil"].'</center></td>
+                                                <td><center>'.$value["nombrePerfil"].'</center></td>
+                                              </tr>';
+                                    }
+                                    
+                                    
+                                    ?>
+
+                                    </table>
                                     
                                 </div>
 

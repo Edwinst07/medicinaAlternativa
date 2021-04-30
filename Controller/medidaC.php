@@ -90,6 +90,10 @@ class MedidaC{
 
     }
 
+    public function MostrarMedidaC(){
+        return MedidaM::MostrarMedidaM();
+    }
+
 }
 
 ?>

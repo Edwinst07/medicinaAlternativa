@@ -16,21 +16,34 @@ class CompraProdC{
 
         if(isset($_POST["insert"])){
 
-            $datosC = array('producto'=>$_POST["producto"], 'categoria'=>$_POST["categoria"], 
-                            'fecha_fab'=>$_POST["fecha_fab"], 'fecha_venc'=>$_POST["fecha_venc"],
-                            'laboratorio'=>$_POST["laboratorio"], 'invima'=>$_POST["invima"],
-                            'direccion'=>$_POST["direccion"]);
+            date_default_timezone_set("America/Mexico_City");
+        
+            $fecha_actual = strtotime(date("Y-m-d H:i:s"));
+            $fechaMenorActual = strtotime($_POST["fecha_fab"]);
+            $fechaMayorActual = strtotime($_POST["fecha_venc"]);
 
-            $tablaBD = "compra_prod";
+            if($fecha_actual < $fechaMenorActual || $fecha_actual > $fechaMayorActual){
 
-            $res = CompraProdM::InsertCompraProdM($datosC,$tablaBD);
-
-            if($res){
-
-                echo '<script>alert("Se agrego correctamente!!!")</script>';
+                echo 'Verificar Fechas!!';
             }else{
 
-                echo 'No se agrego compra!!';
+                $datosC = array('producto'=>$_POST["producto"], 'categoria'=>$_POST["categoria"], 
+                'fecha_fab'=>$_POST["fecha_fab"], 'fecha_venc'=>$_POST["fecha_venc"],
+                'laboratorio'=>$_POST["laboratorio"], 'invima'=>$_POST["invima"],
+                'direccion'=>$_POST["direccion"]);
+
+                $tablaBD = "compra_prod";
+
+                $res = CompraProdM::InsertCompraProdM($datosC,$tablaBD);
+
+                if($res){
+
+                    echo '<script>alert("Se agrego correctamente!!!")</script>';
+                }else{
+
+                    echo 'No se agrego compra!!';
+                }
+
             }
 
         }

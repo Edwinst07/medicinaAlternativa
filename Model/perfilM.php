@@ -83,7 +83,7 @@ class PerfilM{
     public function ConsultInAccesoUsuario($idAU){
 
         $pdo = ConexionBD::cBD()->prepare("SELECT * FROM `medicinaalternativa`.`accesousuario` 
-                                            WHERE `idPerfil`=:id");
+                                            WHERE `idPerfil`=:id AND `estado`=0");
 
         $pdo -> bindParam(":id", $idAU, PDO::PARAM_STR);
 
@@ -97,6 +97,23 @@ class PerfilM{
 
         $pdo -> close;
 
+
+    }
+
+    public function MostrarPerfilesM(){
+
+        $pdo = ConexionBD::cBD()->prepare("SELECT * FROM `medicinaalternativa`.`perfil` 
+                                            WHERE `estado`=0");
+
+        if($pdo -> execute()){
+
+            return $pdo -> fetchAll();
+        }else{
+
+            return 'No hay Perfil';
+        }
+
+        $pdo -> close;
 
     }
 

@@ -95,6 +95,10 @@ class ModoPagoC{
 
     }
 
+    public function MostrarMpC(){
+        return ModoPagoM:: MostrarMpM();
+    }
+
 }
 
 ?>

@@ -99,6 +99,23 @@ class CargoLaboralM{
             return false;
         }
 
+        $pdo -> close;
+
+    }
+
+    public function MostrarClM(){
+
+        $pdo = ConexionBD::cBD()->prepare("SELECT * FROM `medicinaalternativa`.`cargolaboral` 
+                                            WHERE `estado`=0");
+
+        if($pdo ->execute()){
+
+            return $pdo ->fetchAll();
+        }else{
+
+            return 'No hay Cargo laboral';
+        }
+        $pdo -> close;
     }
 
 }

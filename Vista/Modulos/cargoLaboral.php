@@ -50,6 +50,30 @@
 
                                         ?>
                                     </table>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <table class="table table-hover">
+                                        <tr>
+                                        <center><b>Listado - Cargo laboral</b></center>
+                                        </tr>
+                                        <tr>
+                                        <td><center><b>C&oacute;digo</b></center></td>
+                                        <td><center><b>Cargo laboral</b></center></td>
+                                        <?php
+                                        
+                                            $cl = CargoLaboralC::MostrarClC();
+
+                                            foreach ($cl as $key => $value) {
+                                                echo '<tr>
+                                                        <td><center>'.$value["idCargo"].'</center></td>
+                                                        <td><center>'.$value["nombreCargo"].'</center></td>
+                                                     </tr>';
+                                            }
+
+                                        ?>
+                                        </tr>
+                                    </table>
                                     
                                 </div>
 

@@ -84,6 +84,22 @@ class FormaM{
 
     }
 
+    public function MostrarFromaM(){
+
+        $pdo = ConexionBD::cBD()->prepare("SELECT * FROM `medicinaalternativa`.`forma_producto` 
+                                            WHERE `estado`=0");
+
+        if($pdo -> execute()){
+
+            return $pdo -> fetchAll();
+        }else{
+
+            return 'No hay Formas producto';
+        }
+
+        $pdo ->close;
+    }
+
 }
 
 ?>

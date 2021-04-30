@@ -46,6 +46,29 @@
 
                                         ?>
                                     </table>
+                                    <br><br><br>
+
+                                    <table class="table table-hover">
+
+                                        <tr><center><b>Listado - Forma producto</b></center></tr>
+                                        <tr>
+                                        <td><center><b>C&oacute;digo</b></center></td>
+                                        <td><center><b>Forma</b></center></td>
+                                        </tr>
+
+                                        <?php
+                                        
+                                        $forma = Formac::MostrarFormaC();
+
+                                        foreach ($forma as $key => $value) {
+                                            echo '<tr>
+                                                    <td><center>'.$value["idForma"].'</center></td>
+                                                    <td><center>'.$value["forma"].'</center></td>
+                                                  </tr>';
+                                        }
+                                        
+                                        ?>
+                                    </table>
                                     
                                 </div> 
 

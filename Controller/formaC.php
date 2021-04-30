@@ -88,6 +88,11 @@ class FormaC{
 
     }
 
+    public function MostrarFormaC(){
+
+        return FormaM::MostrarFromaM();
+    }
+
 }
 
 ?>

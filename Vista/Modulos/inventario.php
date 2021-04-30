@@ -1,5 +1,5 @@
 <h3>Inventario</h3>
-<p style="color:tomato; margin-left:30px">Campos con (*) son obligatorios:</p>
+<p>Campos con (*) son obligatorios:</p>
                         <div class="cont-der">
                             <form method="POST">
 
@@ -132,6 +132,13 @@
                                                     <option value="No">No</option>
                                                 </select>
                                                 <small class="form-text text-danger" id="msgSelect"></small>
+                                            </td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td><label for="existe">Imagen: *</label></td>
+                                            <td colspan="2">
+                                                <input type="file" name="image" require>
                                             </td>
                                         </tr>
                      

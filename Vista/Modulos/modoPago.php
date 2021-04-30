@@ -49,6 +49,30 @@
 
                                         ?>
                                     </table>
+                                    <br><br><br>
+
+                                    <table class="table table-hover">
+                                        <tr>
+                                            <center><b>Listado - Modo pago</b></center>
+                                        </tr>
+                                        <tr>
+                                            <td><center><b>C&oacute;digo</b></center></td>
+                                            <td><center><b>Modo pago</b></center></td>
+                                        </tr>
+                                        
+                                        <?php
+                                        
+                                        $mp = ModoPagoC::MostrarMpC();
+
+                                        foreach ($mp as $key => $value) {
+                                            echo '<tr>
+                                                    <td><center>'.$value["idModoPago"].'</center></td>
+                                                    <td><center>'.$value["nombrePago"].'</center></td>
+                                                  </tr>';
+                                        }
+                                        
+                                        ?>
+                                    </table>
                                     
                                 </div>
 

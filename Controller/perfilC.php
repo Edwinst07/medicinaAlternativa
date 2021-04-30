@@ -61,10 +61,7 @@ class PerfilC{
             $datosC = $_POST["id"];
             $tablaBD = "perfil";
 
-            if(PerfilM::ConsultInAccesoUsuario($datosC)){
-
-                echo 'No se pudo eliminar: Cod.'.$datosC.' se encuentra en uso en "Acceso Usuario".';
-            }else{
+            if(PerfilM::ConsultInAccesoUsuario($datosC) == null){
 
                 $res = PerfilM::DeletePerfilM($datosC,$tablaBD);
     
@@ -73,6 +70,10 @@ class PerfilC{
                 }else{
                     echo 'No se elimino el registro N.'.$datosC;
                 }
+
+            }else{
+
+                echo 'No se pudo eliminar: Cod.'.$datosC.' se encuentra en uso en "Acceso Usuario".';
 
             }
 
@@ -97,6 +98,10 @@ class PerfilC{
             }
             
         }
+    }
+
+    public function MostrarPerfilesC(){
+        return PerfilM::MostrarPerfilesM();
     }
 
     // public function ConsultAvancC(){

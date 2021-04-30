@@ -1,4 +1,5 @@
 <h3>Empleado</h3>
+<p>Campos con (*) son obligatorios:</p>
                         <div class="cont-derecho">
                             <form method="POST">
 
@@ -12,19 +13,19 @@
                                         ?>
 
                                         <tr>
-                                            <td><label for="id">Cedula:</label></td>
+                                            <td><label for="id">Cedula:*</label></td>
                                             <td colspan="2"><input type="text" name="cedula" id="number" value="<?php echo $res["cedula"]; ?>" 
                                                 title="Campo numerico, No se permite texto" class="form-control">
                                                 <small class="form-text text-danger" id="msgNumber"></small>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td ><label for="name">Primer nombre:</label></td>
+                                            <td ><label for="name">Primer nombre:*</label></td>
                                             <td ><input type="text" name="nombre1" id="text" value="<?php echo $res["nombre1"]; ?>" 
                                                 class="form-control">
                                                 <small class="form-text text-danger" id="msgText"></small>
                                             </td>
-                                            <td ><label for="name">Segundo nombre:</label></td>
+                                            <td ><label for="name">Segundo nombre:*</label></td>
                                             <td ><input type="text" name="nombre2" id="text" value="<?php echo $res["nombre2"]; ?>" 
                                                  class="form-control" require>
                                                 <small class="form-text text-danger" id="msgText"></small>
@@ -32,12 +33,12 @@
                                         </tr>
                                        
                                         <tr>
-                                            <td ><label for="name">Primer apellido:</label></td>
+                                            <td ><label for="name">Primer apellido:*</label></td>
                                             <td ><input type="text" name="apellido1" id="text" value="<?php echo $res["apellido1"]; ?>" 
                                                  class="form-control" require>
                                                 <small class="form-text text-danger" id="msgText"></small>
                                             </td>
-                                            <td><label for="name">Segundo apellido:</label></td>
+                                            <td><label for="name">Segundo apellido:*</label></td>
                                             <td><input type="text" name="apellido2" id="text" value="<?php echo $res["apellido2"]; ?>" 
                                                 class="form-control" require>
                                                 <small class="form-text text-danger" id="msgText"></small>
@@ -45,7 +46,7 @@
                                         </tr>
                                         
                                         <tr>
-                                            <td><label for="genero">Genero:</label></td>
+                                            <td><label for="genero">Genero:*</label></td>
                                             <td>
                                                 <select name="genero" id="select" class="form-select">
                                                     <option value="">
@@ -64,7 +65,7 @@
                                                 </select>
                                                 <small class="form-text text-danger" id="msgSelect"></small>
                                             </td>
-                                            <td><label for="direccion">Direcci&oacute;n:</label></td>
+                                            <td><label for="direccion">Direcci&oacute;n:*</label></td>
                                             <td>
                                                 <input type="text" name="direccion" id="text" value="<?php echo $res["direccion"]; ?>" 
                                                 class="form-control">
@@ -72,13 +73,13 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><label for="telefono">Telefono:</label></td>
+                                            <td><label for="telefono">Telefono:*</label></td>
                                             <td>
                                                 <input type="text" name="tel" id="number" value="<?php echo $res["telefono"]; ?>" 
                                                 class="form-control">
                                                 <small class="form-text text-danger" id="msgNumber"></small>
                                             </td>
-                                            <td><label for="Movil">Movil:</label></td>
+                                            <td><label for="Movil">Movil:*</label></td>
                                             <td>
                                                 <input type="text" name="movil" id="number" value="<?php echo $res["movil"]; ?>" 
                                                 class="form-control">
@@ -86,13 +87,13 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><label for="correo">Correo:</label></td>
+                                            <td><label for="correo">Correo:*</label></td>
                                              <td>
                                                 <input type="email" name="correo" id="email" value="<?php echo $res["correo"]; ?>" 
                                                 class="form-control">
                                                 <small class="form-text text-danger" id="msgEmail"></small>
                                             </td>
-                                            <td><label for="fechaNacimiento">Fecha nacimiento:</label></td>
+                                            <td><label for="fechaNacimiento">Fecha nacimiento:*</label></td>
                                             <td>
                                                 <input type="date" name="fechaNacimiento" id="date" value="<?php echo $res["fecha_nacimiento"]; ?>" 
                                                 max="2010-12-31" class="form-control">
@@ -100,7 +101,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><label for="sucursal">Sucursal:</label></td>
+                                            <td><label for="sucursal">Sucursal:*</label></td>
                                             <td>
                                                 <select name="sucursal" id="select" class="form-select">
                                                     <option value="">
@@ -130,7 +131,7 @@
                                                 </select>
                                                 <small class="form-text text-danger" id="msgSelect"></small>
                                            </td>
-                                           <td><label for="cargoLaboral">Cargo laboral:</label></td>
+                                           <td><label for="cargoLaboral">Cargo laboral:*</label></td>
                                            <td>
                                                 <select name="cargoLaboral" id="select" class="form-select">
                                                     <option value="">
@@ -187,5 +188,5 @@
                                 </div>
 
                             </form>
-                            <script type="text/javascript" src="js/validar.js"></script>
+                            
                         </div>

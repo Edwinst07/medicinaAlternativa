@@ -6,9 +6,9 @@ class InventarioM{
 
         $pdo = ConexionBD::cBD()->prepare("INSERT INTO  `medicinaalternativa`.$tablaBD(`idProducto`, `nombre`, 
                                             `costo`, `descripcion`, `medida`, `cantidad_medida`, `cantidad_prod`, 
-                                            `porc_ganancia`, `existe`, `formaProducto`)
+                                            `porc_ganancia`, `existe`, `formaProducto`, `image`)
                                             VALUES(:id, :nombre, :costo, :descrip, :medida, :cantMedida, :cantidadProd, 
-                                            :porGanancia, :existe, :forma)");
+                                            :porGanancia, :existe, :forma, :imagen)"); 
 
         $pdo -> bindParam(":id", $datosC["id"], PDO::PARAM_STR);
         $pdo -> bindParam(":nombre", $datosC["nombre"], PDO::PARAM_STR);
@@ -20,6 +20,7 @@ class InventarioM{
         $pdo -> bindParam(":porGanancia", $datosC["porGanancia"], PDO::PARAM_STR);
         $pdo -> bindParam(":existe", $datosC["existe"], PDO::PARAM_STR);
         $pdo -> bindParam(":forma", $datosC["forma"], PDO::PARAM_STR);
+        $pdo -> bindParam(":imagen", $datosC["image"], PDO::PARAM_STR);
 
         if($pdo -> execute()){
 
@@ -83,7 +84,7 @@ class InventarioM{
                                         SET `idProducto`=:id, `nombre`=`nombre`, `costo`=`costo`, `formaProducto`=`formaProducto`, 
                                         `descripcion`=`descripcion`, `medida`=`medida`, `cantidad_medida`=`cantidad_medida`, 
                                         `cantidad_prod`=`cantidad_prod`, `porc_ganancia`=`porc_ganancia`, `existe`=`existe`, 
-                                        `estado`=1
+                                        `image`=`image`,`estado`=1
                                         WHERE `idProducto`=:id LIMIT 1");
 
         $pdo -> bindParam(":id", $datosC, PDO::PARAM_STR);
@@ -102,22 +103,23 @@ class InventarioM{
 
     static public function UpdateInventarioM($datosC,$tablaBD){
 
-        $pdo = ConexionBD::cBD()->prepare("UPDATE `medicinaalternativa`.$tablaBD
-                                    SET `idProducto`=:id, `nombre`=:nombre, `costo`=:costo, `formaProducto`=:forma, 
-                                    `descripcion`=:descrip, `medida`=:medida, `cantidad_medida`=:cantMedida, 
-                                    `cantidad_prod`=:cantidadProd, `porc_ganancia`=:porGanancia, `existe`=:existe
-                                    WHERE `idProducto`=:id LIMIT 1");
+        $pdo = ConexionBD::cBD()->prepare("UPDATE `medicinaalternativa`.$tablaBD SET `idProducto`=:id, `nombre`=:nombre,
+                                            `costo`=:costo, `descripcion`=:descrip, `formaProducto`=:forma,
+                                            `medida`=:medida, `cantidad_medida`=:cantMedida, `cantidad_prod`=:cantidadProd,
+                                            `porc_ganancia`=:porGanancia, `existe`=:existe, `image`=:imagen
+                                            WHERE `idProducto`=:id LIMIT 1");
 
         $pdo -> bindParam(":id", $datosC["id"], PDO::PARAM_STR);
         $pdo -> bindParam(":nombre", $datosC["nombre"], PDO::PARAM_STR);
         $pdo -> bindParam(":costo", $datosC["costo"], PDO::PARAM_STR);
         $pdo -> bindParam(":descrip", $datosC["descrip"], PDO::PARAM_STR);
+        $pdo -> bindParam(":forma", $datosC["forma"], PDO::PARAM_STR);
         $pdo -> bindParam(":medida", $datosC["medida"], PDO::PARAM_STR);
         $pdo -> bindParam(":cantMedida", $datosC["cantMedida"], PDO::PARAM_STR);
         $pdo -> bindParam(":cantidadProd", $datosC["cantidadProd"], PDO::PARAM_STR);
         $pdo -> bindParam(":porGanancia", $datosC["porGanancia"], PDO::PARAM_STR);
         $pdo -> bindParam(":existe", $datosC["existe"], PDO::PARAM_STR);
-        $pdo -> bindParam(":forma", $datosC["forma"], PDO::PARAM_STR);
+        $pdo -> bindParam(":imagen", $datosC["image"], PDO::PARAM_STR);
 
         if($pdo -> execute()){
 

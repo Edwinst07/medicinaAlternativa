@@ -206,3 +206,15 @@ function validar(Boton){
 	return validacion;
 }
 
+function fechaMayor(){
+
+}
+
+function fechaMenor(){
+
+}
+
+function resFecha(){
+	
+}
+
