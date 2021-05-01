@@ -1,5 +1,4 @@
 <?php 
-require_once "conexionBD.php";
 
 class AccesoUsuarioC{
 

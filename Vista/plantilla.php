@@ -24,7 +24,7 @@
 					
                     <?php 
 
-                    include "Modulos/menu.php";
+                    include "Modulos/AdministracionModulos/menu.php";
 
                     ?>
 

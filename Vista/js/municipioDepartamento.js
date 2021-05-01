@@ -2,7 +2,7 @@
 $(document).ready(function(){
             $("#selectDep").change(function(){
                 let aid = $("#selectDep").val();
-                $('#selectMun').load('Vista/Modulos/sucursales.php?idDep='+aid,
+                $('#selectMun').load('Vista/Modulos/AdministracionModulos/sucursales.php?idDep='+aid,
                 function(municipio){
                     municipio = JSON.parse(municipio);
                      $('#selectMun').empty();

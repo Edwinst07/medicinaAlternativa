@@ -25,7 +25,7 @@
                                                 class="form-control">
                                                 <small class="form-text text-danger" id="msgText"></small>
                                             </td>
-                                            <td ><label for="name">Segundo nombre:*</label></td>
+                                            <td ><label for="name">Segundo nombre:</label></td>
                                             <td ><input type="text" name="nombre2" id="text" value="<?php echo $res['nombre2']; ?>" 
                                                  class="form-control">
                                                 <small class="form-text text-danger" id="msgText"></small>
@@ -38,7 +38,7 @@
                                                  class="form-control">
                                                 <small class="form-text text-danger" id="msgText"></small>
                                             </td>
-                                            <td><label for="name">Segundo apellido:*</label></td>
+                                            <td><label for="name">Segundo apellido:</label></td>
                                             <td><input type="text" name="apellido2" id="text" value="<?php echo $res['apellido2']; ?>" 
                                                 class="form-control">
                                                 <small class="form-text text-danger" id="msgText"></small>
@@ -52,7 +52,7 @@
                                                 class="form-control">
                                                 <small class="form-text text-danger" id="msgText"></small>
                                             </td>
-                                            <td><label for="telefono">Telefono:*</label></td>
+                                            <td><label for="telefono">Telefono:</label></td>
                                             <td>
                                                 <input type="text" name="tel" id="number" value="<?php echo $res['telefono']; ?>" 
                                                 class="form-control">
@@ -66,7 +66,7 @@
                                                 class="form-control">
                                                 <small class="form-text text-danger" id="msgNumber"></small>
                                             </td>
-                                            <td><label for="correo">Correo:</label></td>
+                                            <td><label for="correo">Correo:*</label></td>
                                             <td>
                                                 <input type="email" name="correo" id="email" value="<?php echo $res['correo']; ?>" 
                                                 class="form-control">

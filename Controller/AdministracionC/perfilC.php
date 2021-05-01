@@ -1,7 +1,5 @@
 <?php
 
-require_once "conexionBD.php";
-
 class PerfilC{
 
     public function InsertPerfilC(){

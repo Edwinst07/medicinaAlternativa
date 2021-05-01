@@ -46,7 +46,7 @@ class SucursalM{
 
     public function MunicipioM($depart){
         
-    require_once "../../Controller/conexionBD.php";
+    require_once "../../../Controller/conexionBD.php";
 
         $pdo = ConexionBD::cBD()->prepare("SELECT `idMunicipio`, `nombre` 
                                         FROM `medicinaalternativa`.`municipio`  WHERE `idDep`=:id AND `estado`=0");
