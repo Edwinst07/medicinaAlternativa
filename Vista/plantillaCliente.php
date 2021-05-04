@@ -11,17 +11,14 @@
   <title>Medicina Alternativa</title>
   <!-- TITULO_PESTAÑA NAVEGADOR -->
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap core CSS -->
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	
+  <!-- Estilos personalizados para esta plantilla -->
+  <link href="Vista/css/simple-sidebar.css" rel="stylesheet">
+  <link rel="shortcut icon" href="Vista/img/icon.png" />
 
-  <!-- Estilos personalizados para esta plantilla -->
-  <link href="css/simple-sidebar.css" rel="stylesheet">
-  <!-- Estilos personalizados para esta plantilla -->
+  <script src="Vista/js/jquery-3.6.0.js"></script>
 
 </head>
 <body>
@@ -111,12 +108,9 @@
 
       <!-- BARRA HORIZONTAL -->
       <!-- VENTANA PRINCIPAL -->
-      <div class="container-fluid">
+      <div class="container-fluid" style="height: auto; padding-bottom: 50px; margin_botton: 50px;">
         <h1 class="mt-4">VENTANA PRINCIPAL</h1>
-        <p>En esta ventana se pondra los cuadros de texto.</p>       
-        <p>y los botones</p>
-
-
+        
         <?php
 
             $rutas = new RutasController();
@@ -126,19 +120,20 @@
 
 
       </div>
-      <!-- VENTANA PRINCIPAL -->    
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<div class="Container mt-5 mb-5 text-center">
+      <h5>
+        &copy;2021 - By Edwin Stiven Lozada Mahecha - Jairo Alexander Fernandez Lopez
+      </h5>
 
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
+          <p>
+            Ingenieria de software III - Uniremington
+          </p>
+        </div>
+      </div>
+    </div>
 
 </body>
 

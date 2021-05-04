@@ -1,87 +1,63 @@
+    <!-- Js -->
+    <script src="Vista/js/jquery-3.6.0.js"></script>
+  <script src="Vista/js/producto.js"></script>
 
-<section>
-          <div class="container mt-5 mb-5">
-            <div class="row justify-content-center">
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
-                <div class="card" style="width: 18rem;">
-                  <div
-                    class="cover cover-small"
-                    style="background-image:url(https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fdescarga.jpg?v=1615312857660)"
-                  ></div>
-                  <div class="card-body ">
-                    <h5 class="card-title ">
-                      <a href="tipos_de_plantas.html">Tipos de plantas</a>
-                    </h5>
-                    <p class="card-text">
-                      Podrás obtener más información sobre qué tipos de plantas
-                      existen.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
-                <div class="card" style="width: 18rem;">
-                  <div
-                    class="cover cover-small"
-                    style="background-image:url(https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fconsejos-de-plantas-medicinales.jpg?v=1615314094696)"
-                  ></div>
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      <a href="como_se_prepara.html">Remedios Naturales</a>
-                    </h5>
-                    <p class="card-text">
-                      remedios naturales para cuidar tu salud
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
-                <div class="card" style="width: 18rem;">
-                  <div
-                    class="cover cover-small"
-                    style="background-image:url(https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2FOJEONBOQBZEYJFGRSQY2NW2SPQ.jpg?v=1615314187484)"
-                  ></div>
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      <a href="diferentes_usos.html">Aromaterapia</a>
-                    </h5>
-                    <p class="card-text">
-                      sencillos trucos con los que dar al hogar un olor rico y saludable
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
-                <div class="card" style="width: 18rem;">
-                  <div
-                    class="cover cover-small"
-                    style="background-image:url(https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fsalud-plantas-rpimeros-auxilios-668x400x80xX.jpg?v=1615315449549)"
-                  ></div>
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      <a href="para_que_sirve.html">Para que sirven</a>
-                    </h5>
-                    <p class="card-text">
-                      las plantas medicinales cuentan con características que sirven
-                      para diferentes usos.
-                    </p>
-                  </div>
-                </div>
+<br><br><br>
+<div class="productos">
+
+<?php
+    
+    $producto = MostrarProductoC::ProductosC();
+
+    foreach ($producto as $key => $value) {
+      
+      echo '<div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2 " style="float:left;">
+            <div class="card" style="width: 18rem;">
+              <div
+                class="cover cover-small"
+                
+              >
+              <img src="Vista/img/productos/'.$value["image"].'" width="288px" height="200px"></div>
+              <div class="card-body ">
+                <h5 class="card-title ">
+                  <a href="#">'.$value["nombre"].'</a>
+                </h5>
+                <p class="card-text">
+                '.$value["descripcion"].'
+                   
+                  <center><button style="margin-top: 20px" type="button" id="prod" value="'.$value["idProducto"].'" class="btn btn-info">
+                  <a href="#">Comprar</a>
+                </button></center>
+                </p>
+                
               </div>
             </div>
-          </div>
-        </section>   
+          </div>';
 
-        <div class="compra">
+    }
+    
+    ?>
 
-          <h1>Su compra</h1>
+</div>
+<div class="compra">
 
-          <table>
-            <tr>
-              <td>nombre producto</td>
-              <td>cantidad</td>
-              <td>borrar</td>
-            </tr>
-          </table>
+  <div class="contenedor">
 
-        </div>
+    <center><h1>Compra</h1></center>
+        <br><br><br>
+        <table class="table">
+
+          <tr>
+            <td>Producto</td>
+            <td>Precio</td>
+            <td>Cantidad</td>
+            <td>Borrar</td>
+          </tr>
+
+        </table>
+
+  </div>
+
+</div>
+
+
