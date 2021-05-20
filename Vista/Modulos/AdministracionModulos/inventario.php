@@ -28,8 +28,10 @@
                                         <tr>
                                             <td colspan="1"><label for="desc">Descripci&oacute;n: *</label></td>
                                             <td colspan="3">
-                                                <input type="text" name="descripcion" value="<?php echo $res["descripcion"]; ?>" 
-                                                title="Campo de texto." class="form-control">
+                                            <textarea name="descripcion" id="text" value="<?php echo $res["descripcion"]; ?>"  rows="2" class="form-control" title="Campo de texto.">
+                                            <?php echo $res["descripcion"]; ?>
+                                            </textarea>
+                                                
                                                 <small class="form-text text-danger" id="msgText"></small>
                                             </td>
                                         </tr>
@@ -37,7 +39,21 @@
                                             <td><label for="forma">Forma: *</label></td>
                                             <td>
                                                 <select name="forma" id="select" class="form-select">
-                                                    <option value="">
+                                                    <option value="
+                                                    
+                                                    <?php
+                                                    
+                                                    if(isset($_POST["consult"])){
+
+                                                        echo $res["formaProducto"];
+                                                    }else{
+
+                                                        echo '';
+                                                    }
+                                                    
+                                                    ?>
+                                                    
+                                                    ">
                                                     <?php
                                                     
                                                     if(isset($_POST["consult"])){
@@ -74,10 +90,20 @@
                                             <td><label for="medida">Medida: *</label></td>
                                             <td>
                                                 <select name="medida" id="select" class="form-select">
-                                                    <option value="">
-                                                        <?php 
+                                                    <option value="
+                                                    
+                                                    <?php 
                                                             if(isset($_POST["consult"])){
                                                                 echo $res["medida"];
+                                                            }else{
+                                                                echo '';
+                                                            }
+                                                        ?>
+                                                    
+                                                    ">
+                                                        <?php 
+                                                            if(isset($_POST["consult"])){
+                                                                echo $res["nombreMedida"];
                                                             }else{
                                                                 echo 'Medida';
                                                             }
@@ -119,7 +145,17 @@
                                             <td><label for="existe">Existe: *</label></td>
                                             <td colspan="2">
                                                 <select name="existe" id="select" class="form-select">
-                                                    <option value="">
+                                                    <option value="
+                                                    
+                                                    <?php
+                                                            if(isset($_POST["consult"])){
+                                                                echo $res["existe"];
+                                                            }else{
+                                                                echo '';
+                                                            }
+                                                        ?>
+                                                    
+                                                    ">
                                                         <?php
                                                             if(isset($_POST["consult"])){
                                                                 echo $res["existe"];
@@ -138,7 +174,7 @@
                                         <tr>
                                             <td><label for="existe">Imagen: *</label></td>
                                             <td colspan="2">
-                                                <input type="file" name="image" require>
+                                                <input type="file" name="image" value="<?php echo $res["image"]; ?>" require>
                                             </td>
                                         </tr>
                      

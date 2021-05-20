@@ -4,7 +4,7 @@ class MedidaM{
 
     public function InsertMedidaC($datosC,$tablaBD){
 
-        $pdo = ConexionBD::cBD()->prepare("INSERT INTO `medicinaalternativa`.$tablaBD(`codigo`, `medida`)
+        $pdo = ConexionBD::cBD()->prepare("INSERT INTO `medicinaalternativa`.$tablaBD(`codigo`, `nombreMedida`)
                                             VALUES (:id, :nombre)");
 
         $pdo -> bindParam(":id", $datosC["id"], PDO::PARAM_STR);
@@ -23,7 +23,7 @@ class MedidaM{
 
     public function ConsultMedidaM($datosC,$tablaBD){
 
-        $pdo = ConexionBD::cBD()->prepare("SELECT `codigo`, `medida`
+        $pdo = ConexionBD::cBD()->prepare("SELECT `codigo`, `nombreMedida`
                                         FROM `medicinaalternativa`.$tablaBD
                                         WHERE (`codigo`=:id OR `medida`=:nombre)
                                         AND `estado`=0");
@@ -46,7 +46,7 @@ class MedidaM{
     public function DeleteMedidaM($datosC,$tablaBD){
 
         $pdo = ConexionBD::cBD()->prepare("UPDATE `medicinaalternativa`.$tablaBD
-                                            SET `codigo`=:id, `medida`=`medida`, `estado`=1
+                                            SET `codigo`=:id, `nombreMedida`=`medida`, `estado`=1
                                             WHERE `codigo`=:id LIMIT 1");
         
         $pdo -> bindParam(":id", $datosC, PDO::PARAM_STR);
@@ -66,7 +66,7 @@ class MedidaM{
     public function UpdateMedidaM($datosC,$tablaBD){
 
         $pdo = ConexionBD::cBD()->prepare("UPDATE `medicinaalternativa`.$tablaBD
-                                            SET `codigo`=:id, `medida`=:nombre
+                                            SET `codigo`=:id, `nombreMedida`=:nombre
                                             WHERE `codigo`=:id");
         
         $pdo -> bindParam(":id", $datosC["id"], PDO::PARAM_STR);

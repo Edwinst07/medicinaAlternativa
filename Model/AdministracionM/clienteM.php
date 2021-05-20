@@ -37,7 +37,7 @@ class ClienteM{
 
         $pdo = ConexionBD::cBD()->prepare("SELECT c.`cedula`, c.`nombre1`, c.`nombre2`, 
                                             c.`apellido1`, c.`apellido2`, c.`direccion`, c.`telefono`, 
-                                            c.`movil`, c.`correo`, m.`nombre`, d.`nombreDepartamento`
+                                            c.`movil`, c.`correo`, m.`nombreMunicipio`, d.`nombreDepartamento`
                                             FROM `medicinaalternativa`.$tablaBD AS c,
                                                  `medicinaalternativa`.`municipio` AS m,
                                                  `medicinaalternativa`.`departamento` AS d

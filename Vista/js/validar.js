@@ -14,7 +14,7 @@ function validar(Boton){
 
 		let text = document.getElementById("text");
 		let msgText = document.getElementById("msgText");
-		let rgxText = /^[A-Za-z0-9\s]+$/g;
+		let rgxText = /^[a-zA-Z Á-ñ]{2,30}$/;
 
 		if (number.value.trim() == "" || number.value.length == 0) {
 			if(Boton =="Consultar")

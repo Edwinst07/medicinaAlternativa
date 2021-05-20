@@ -50,24 +50,27 @@
 
                                     <table class="table table-hover">
 
-                                        <tr><center><b>Listado - Forma producto</b></center></tr>
                                         <tr>
-                                        <td><center><b>C&oacute;digo</b></center></td>
-                                        <td><center><b>Forma</b></center></td>
+                                        <td><label for="listado">Agregados:</label></td>
+                                        <td>
+                                            <select name="" id="" class="form-select">
+                                                <option value="">Listado...</option>
+
+                                                <?php
+                                            
+                                                    $forma = Formac::MostrarFormaC();
+
+                                                    foreach ($forma as $key => $value) {
+                                                        echo '<option value="">Código: '.$value["idForma"].'- Forma: '.$value["forma"].'</option>';
+                                                    }
+                                            
+                                                ?>
+                                            </select>
+
+                                        </td>
                                         </tr>
 
-                                        <?php
                                         
-                                        $forma = Formac::MostrarFormaC();
-
-                                        foreach ($forma as $key => $value) {
-                                            echo '<tr>
-                                                    <td><center>'.$value["idForma"].'</center></td>
-                                                    <td><center>'.$value["forma"].'</center></td>
-                                                  </tr>';
-                                        }
-                                        
-                                        ?>
                                     </table>
                                     
                                 </div> 

@@ -6,7 +6,7 @@ class Model{
 
         if($rutas=="inventario" || $rutas=="compraProd" || $rutas=="modoPago" || $rutas=="forma" || $rutas=="medida" || 
         $rutas=="categoriaProducto" || $rutas=="departamento" || $rutas=="cargoLaboral" || $rutas=="sucursal" || $rutas=="cliente" || 
-        $rutas=="empleado" || $rutas=="perfil" || $rutas=="municipio" || $rutas=="accesoUsuario"){
+        $rutas=="empleado" || $rutas=="laboratorio" || $rutas=="perfil" || $rutas=="municipio" || $rutas=="accesoUsuario"){
 
             $pagina = "Vista/Modulos/AdministracionModulos/".$rutas.".php";
         }else{

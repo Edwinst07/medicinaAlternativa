@@ -4,7 +4,7 @@ class MunicipioM{
 
     public function InsertMunicipioM($datosC,$tablaBD){
 
-        $pdo = ConexionBD::cBD()->prepare("INSERT INTO `medicinaalternativa`.$tablaBD(`idMunicipio`, `nombre`, `idDep`) 
+        $pdo = ConexionBD::cBD()->prepare("INSERT INTO `medicinaalternativa`.$tablaBD(`idMunicipio`, `nombreMunicipio`, `idDep`) 
                                             VALUES (:id, :municipio, :dep)");
 
         $pdo -> bindParam(":id",$datosC["codigo"],PDO::PARAM_STR);

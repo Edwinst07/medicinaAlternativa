@@ -4,7 +4,8 @@
 						<li><a class="dropdown-item" href="index.php?ruta=medida">Medida</a></li>
 						<li><a class="dropdown-item" href="index.php?ruta=forma">Forma Producto</a></li>
 						<li><a class="dropdown-item" href="index.php?ruta=compraProd">Compra Producto</a></li>
-						<li><a class="dropdown-item" href="index.php?ruta=categoriaProducto">Categoria producto</a></li>
+						<li><a class="dropdown-item" href="index.php?ruta=laboratorio">Laboratorio</a></li>
+						<li><a class="dropdown-item" href="index.php?ruta=categoriaProducto">Categor&iacute;a producto</a></li>
 	                    <li><a class="dropdown-item" href="index.php?ruta=modoPago">Modo pago</a></li>
 	                    <li><a class="dropdown-item" href="index.php?ruta=departamento">Departamento</a></li>
 						<li><a class="dropdown-item" href="index.php?ruta=municipio">Municipio</a></li>

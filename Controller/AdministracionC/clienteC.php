@@ -19,13 +19,13 @@ class ClienteC{
 
                 $res = ClienteM::InsertClienteM($datosC,$tablaBD);
 
-            if($res){
+                if($res){
 
-                echo '<script>alert("Se agrego cliente correctamente!!")</script>';
-            }else{
+                    echo '<script>alert("Se agrego cliente correctamente!!")</script>';
+                }else{
 
-                echo 'No se agrego cliente!!';
-            }
+                    echo 'No se agrego cliente!!';
+                }
 
             }
 

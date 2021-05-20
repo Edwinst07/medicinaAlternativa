@@ -15,6 +15,7 @@ require_once "Controller/AdministracionC/empleadoC.php";
 require_once "Controller/AdministracionC/medidaC.php";
 require_once "Controller/AdministracionC/formaC.php";
 require_once "Controller/AdministracionC/compraProdC.php";
+require_once "Controller/AdministracionC/laboratorioC.php";
 
 require_once "Model/AdministracionM/rutasM.php";
 require_once "Model/AdministracionM/perfilM.php";
@@ -31,6 +32,7 @@ require_once "Model/AdministracionM/empleadoM.php";
 require_once "Model/AdministracionM/medidaM.php";
 require_once "Model/AdministracionM/formaM.php";
 require_once "Model/AdministracionM/compraProdM.php";
+require_once "Model/AdministracionM/laboratorioM.php";
 
 $rutas = new RutasController();
 $rutas -> Plantilla();

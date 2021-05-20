@@ -7,9 +7,14 @@ class CompraProdC{
         return CompraProdM::ProductoM();
     }
 
-    public function CategoriaC(){
+    public function CategoriaC(){ 
 
         return CompraProdM::CategoriaM();
+    }
+
+    public function LaboratorioC(){
+
+        return CompraProdM::LaboratorioM();
     }
 
     public function InsertCompraProdC(){
@@ -27,10 +32,9 @@ class CompraProdC{
                 echo 'Verificar Fechas!!';
             }else{
 
-                $datosC = array('producto'=>$_POST["producto"], 'categoria'=>$_POST["categoria"], 
+                $datosC = array('codigo'=>$_POST["codigo"], 'producto'=>$_POST["producto"], 'categoria'=>$_POST["categoria"], 
                 'fecha_fab'=>$_POST["fecha_fab"], 'fecha_venc'=>$_POST["fecha_venc"],
-                'laboratorio'=>$_POST["laboratorio"], 'invima'=>$_POST["invima"],
-                'direccion'=>$_POST["direccion"]);
+                'laboratorio'=>$_POST["laboratorio"]);
 
                 $tablaBD = "compra_prod";
 
@@ -54,7 +58,7 @@ class CompraProdC{
 
         if(isset($_POST["consult"])){
 
-            $datosC = $_POST["producto"];
+            $datosC = $_POST["codigo"];
             $tablaBD = "compra_prod";
 
             return $res = CompraProdM::ConsultCompraProdM($datosC,$tablaBD);
@@ -68,11 +72,17 @@ class CompraProdC{
 
     }
 
+    public function listadoC(){
+
+        return CompraProdM::listadoM();
+
+    }
+
     public function DeleteCompraProdC(){
 
         if(isset($_POST["delete"])){
 
-            $datosC = $_POST["producto"];
+            $datosC = $_POST["codigo"];
             $tablaBD = "compra_prod";
     
             $res = CompraProdM::DeleteCompraProdM($datosC,$tablaBD);
@@ -93,10 +103,10 @@ class CompraProdC{
 
         if(isset($_POST["update"])){
 
-            $datosC = array('producto'=>$_POST["producto"], 'categoria'=>$_POST["categoria"], 
+       
+            $datosC = array('codigo'=>$_POST["codigo"], 'producto'=>$_POST["producto"], 'categoria'=>$_POST["categoria"], 
             'fecha_fab'=>$_POST["fecha_fab"], 'fecha_venc'=>$_POST["fecha_venc"],
-            'laboratorio'=>$_POST["laboratorio"], 'invima'=>$_POST["invima"],
-            'direccion'=>$_POST["direccion"]);
+            'laboratorio'=>$_POST["laboratorio"]);
 
             $tablaBD = "compra_prod";  
             

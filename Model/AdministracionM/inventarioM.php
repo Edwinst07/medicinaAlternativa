@@ -53,8 +53,8 @@ class InventarioM{
 
     static public function ConsultInventarioM($datosC,$tablaBD){
 
-        $pdo = ConexionBD::cBD()->prepare("SELECT i.`idProducto`, i.`nombre`, i.`costo`, i.`descripcion`, m.`medida`, 
-                                        i.`cantidad_medida`, i.`cantidad_prod`, i.`porc_ganancia`, i.`existe`, f.`forma`
+        $pdo = ConexionBD::cBD()->prepare("SELECT i.`idProducto`, i.`nombre`, i.`costo`, i.`descripcion`, i.`formaProducto`, m.`nombreMedida`, 
+                                        i.`medida`, i.`cantidad_medida`, i.`cantidad_prod`, i.`porc_ganancia`, i.`existe`, f.`forma`, `image`
                                         FROM `medicinaalternativa`.$tablaBD AS i,
                                              `medicinaalternativa`.`medida` AS m,
                                              `medicinaalternativa`.`forma_producto` AS f

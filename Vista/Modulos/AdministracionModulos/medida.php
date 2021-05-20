@@ -23,7 +23,7 @@
                                     <tr>
                                         <td><label for="name">Descripción:</label></td>
                                         <td>
-                                            <input type="text" name="nombre" id="text" value="<?php echo $res["medida"];?>" title="solo se permite texto." 
+                                            <input type="text" name="nombre" id="text" value="<?php echo $res["nombreMedida"];?>" title="solo se permite texto." 
                                                  pattern="(^[a-zA-Z Á]{2,30}$)" class="form-control">
                                             <small class="form-text text-danger" id="msgText"></small>
                                         </td>
@@ -67,7 +67,7 @@
                                             
                                             echo '<tr>
                                                     <td><center>'.$value["codigo"].'</center></td>
-                                                    <td><center>'.$value["medida"].'</center></td>
+                                                    <td><center>'.$value["nombreMedida"].'</center></td>
                                                   </tr>';
                                         }
                                     

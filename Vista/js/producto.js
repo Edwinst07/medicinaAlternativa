@@ -1,52 +1,38 @@
-// function producto(id){
+class Producto{
 
-//     if(id==2){
-//         console.log("romero");
-//     }else if(id==3){
-//         console.log("albahaca");
-//     }else if(id==4){
-//         console.log("ortiga");
-//     }else if(id==6){
-//         console.log("quina");
-//     }else if(id==7){
-//         console.log("aloe vera");
-//     }else if(id==8){
-//         console.log("moringa");
-//     }
+    constructor(idProducto,producto,precio){
+        this._idProducto = idProducto;
+        this._producto = producto;
+        this._precio = precio;
+        // this._cantidad = cantidad;
+    }
 
-// }
+    get idProducto(){
+        return this._idProducto;
+    }
 
-// let prod = document.getElementById("prod");
+    get producto(){
+        return this._producto;
+    }
 
-// alert(prod.value);
+    set producto(producto){
+        this._producto = producto;
+    }
 
-    // if(prod.value==2){
-    //     console.log("romero");
-    // }else if(prod.value==3){
-    //     console.log("albahaca");
-    // }else if(prod.value==4){
-    //     console.log("ortiga");
-    // }else if(prod.value==6){
-    //     console.log("quina");
-    // }else if(prod.value==7){
-    //     console.log("aloe vera");
-    // }else if(prod.value==8){
-    //     console.log("moringa");
+    get precio(){
+        return this._precio;
+    }
+
+    set precio(precio){
+        this._precio = precio;
+    }
+
+    // get cantidad(){
+    //     return this._cantidad;
     // }
 
-   
+    // set cantidad(cantidad){
+    //     this._cantidad = cantidad;
+    // }
 
-    function producto(id){
-
-        $('#selectMun').load('Vista/Modulos/ClienteModulos/ingresoProducto.php?idProd='+id,
-        function(producto){
-            producto = JSON.parse(producto);
-            console.log(producto);
-             $('#prodIngresado').empty();
-             producto.forEach(function(prod){
-                $('#prodIngresado').append('<tr> <td>'+prod.nombre+'</td> <td>'+prod.costo+'</td> <td>'+prod.cantidad_prod+'</td> <td>'+prod.estado+'</td> </tr>');
-                
-            })
-        });
-
-    }
+}

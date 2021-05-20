@@ -48,7 +48,7 @@ class SucursalM{
         
     require_once "../../../Controller/conexionBD.php";
 
-        $pdo = ConexionBD::cBD()->prepare("SELECT `idMunicipio`, `nombre` 
+        $pdo = ConexionBD::cBD()->prepare("SELECT `idMunicipio`, `nombreMunicipio` 
                                         FROM `medicinaalternativa`.`municipio`  WHERE `idDep`=:id AND `estado`=0");
         
         $pdo -> bindParam(":id",$depart, PDO::PARAM_STR); 
@@ -67,7 +67,7 @@ class SucursalM{
     public function ConsultSucursalM($datosC, $tablaBD){
 
         $pdo = ConexionBD::cBD()->prepare("SELECT s.`idSucursal`, s.`nombreSucursal`, s.`direccion`, s.`telefono`, s.`correo`, 
-                                            s.`nit`, d.`nombreDepartamento`, m.`nombre` 
+                                            s.`nit`, d.`nombreDepartamento`, m.`nombreMunicipio` 
                                             FROM `medicinaalternativa`.$tablaBD AS s,
                                                 `medicinaalternativa`.`departamento` AS d,
                                                 `medicinaalternativa`.`municipio` AS m

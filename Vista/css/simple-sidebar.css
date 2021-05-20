@@ -172,8 +172,8 @@ transition: all 0.3s ease;
 /* diseño tarjetas */
 
 .cover {
-  height: 500px;
-  background-image: url(https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fplantasmedicinales-t.jpg?v=1615310866561);
+  height: auto;
+  width: auto;
   background-size: cover;
   background-position: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -181,9 +181,22 @@ transition: all 0.3s ease;
   color: white;
 }
 .cover-small {
-  height: 200px;
+  height: auto;
+  width: auto;
   background-blend-mode: normal;
 }
+
+.imagen-fondo{
+  height: 500px;
+  background-image: url(https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fplantasmedicinales-t.jpg?v=1615310866561);
+  width: auto;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  color: white;
+}
+
 .card {
   border: 0 !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -214,7 +227,7 @@ transition: all 0.3s ease;
 
 .productos{
   width: 95%;
-  height: 1150px;
+  height: 1900px;
   margin: auto 50px;
   padding-bottom: 50px;
 }
@@ -237,3 +250,20 @@ transition: all 0.3s ease;
   height: auto;
 }
 
+.cantidad{
+  width: 120px;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+
+.button-delete {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  display: none;
+}

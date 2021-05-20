@@ -1,6 +1,4 @@
-<div
-        class="cover d-flex justify-content-center d-flex align-items-center flex-column"
-      >
+<div class="d-flex justify-content-center d-flex align-items-center flex-column imagen-fondo">
         <h1>
           PLANTAS MEDICINALES
         </h1>
@@ -8,38 +6,19 @@
           De forma facil y rapida
         </p>
       </div>
+      
+      
     </header>
     <!-- Portada y titulos -->
     <!-- Tarjetas  -->
-    <div class="Container mt-5 mb-5 text-center">
-      <h4>
-        ¡Bienvenido!
-      </h4>
-      <h5>
-        Muchas gracias por visitar nuestra web.
-      </h5>
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
-          <p>
-            plantasmedicinales.com es un portal dirigido a las personas en
-            general con el objetivo de dar a conocer los diferentes productos
-            que ofrecemos de manera virtual para ayudar con sus diferentes temas
-            de salud, para que usted de manera fácil pueda obtenerlos en la
-            puerta de su casa
-          </p>
-        </div>
-      </div>
-    </div>
-
     <section>
       <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
             <div class="card" style="width: 18rem;">
-              <div
-                class="cover cover-small"
-                style="background-image:url(https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fdescarga.jpg?v=1615312857660)"
-              ></div>
+              <div class="cover cover-small">
+                <img src="https://empresason.com/upload/images/07_2020/7512_plantas-2_opt-1.jpg" width="288px" height="200px">
+              </div>
               <div class="card-body ">
                 <h5 class="card-title ">
                   <a href="tipos_de_plantas.html">Tipos de plantas</a>
@@ -58,10 +37,9 @@
           </div>
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
             <div class="card" style="width: 18rem;">
-              <div
-                class="cover cover-small"
-                style="background-image:url(https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fconsejos-de-plantas-medicinales.jpg?v=1615314094696)"
-              ></div>
+              <div class="cover cover-small">
+                <img src="https://cdn.bioguia.com/embed/da5e6cc2ef01a7e6b3a3440394c1c91d41547731281/plantas-medicinales.jpg" width="288px" height="200px">
+              </div>
               <div class="card-body">
                 <h5 class="card-title">
                   <a href="como_se_prepara.html">Remedios Naturales</a>
@@ -78,10 +56,9 @@
           </div>
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
             <div class="card" style="width: 18rem;">
-              <div
-                class="cover cover-small"
-                style="background-image:url(https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2FOJEONBOQBZEYJFGRSQY2NW2SPQ.jpg?v=1615314187484)"
-              ></div>
+              <div class="cover cover-small">
+                <img src="https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2FOJEONBOQBZEYJFGRSQY2NW2SPQ.jpg" width="288px" height="200px">
+              </div>
               <div class="card-body">
                 <h5 class="card-title">
                   <a href="diferentes_usos.html">Aromaterapia</a>
@@ -97,10 +74,9 @@
           </div>
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
             <div class="card" style="width: 18rem;">
-              <div
-                class="cover cover-small"
-                style="background-image:url(https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fsalud-plantas-rpimeros-auxilios-668x400x80xX.jpg?v=1615315449549)"
-              ></div>
+              <div class="cover cover-small">
+                <img src="https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fsalud-plantas-rpimeros-auxilios-668x400x80xX.jpg" width="288px" height="200px">
+              </div>
               <div class="card-body">
                 <h5 class="card-title">
                   <a href="para_que_sirve.html">Para que sirven</a>
@@ -123,10 +99,9 @@
         <div class="row justify-content-center">
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
             <div class="card" style="width: 18rem;">
-              <div
-                class="cover cover-small"
-                style="background-image:url(https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fdescarga.jpg?v=1615312857660)"
-              ></div>
+              <div class="cover cover-small">  
+                <img src="https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fdescarga.jpg" width="288px" height="200px">
+              </div>
               <div class="card-body ">
                 <h5 class="card-title ">
                   <a href="tipos_de_plantas.html">Tipos de plantas</a>
@@ -143,10 +118,9 @@
           </div>
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
             <div class="card" style="width: 18rem;">
-              <div
-                class="cover cover-small"
-                style="background-image:url(https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fconsejos-de-plantas-medicinales.jpg)"
-              ></div>
+              <div class="cover cover-small">
+              <img src="https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fconsejos-de-plantas-medicinales.jpg" width="288px" height="200px">
+              </div>
               <div class="card-body">
                 <h5 class="card-title">
                   <a href="como_se_prepara.html">Remedios Naturales</a>
@@ -162,10 +136,9 @@
           </div>
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
             <div class="card" style="width: 18rem;">
-              <div
-                class="cover cover-small"
-                style="background-image:url(https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2FOJEONBOQBZEYJFGRSQY2NW2SPQ.jpg?v=1615314187484)"
-              ></div>
+              <div class="cover cover-small">
+              <img src="https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2FOJEONBOQBZEYJFGRSQY2NW2SPQ.jpg" width="288px" height="200px">
+              </div>
               <div class="card-body">
                 <h5 class="card-title">
                   <a href="diferentes_usos.html">Aromaterapia</a>
@@ -181,10 +154,9 @@
           </div>
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
             <div class="card" style="width: 18rem;">
-              <div
-                class="cover cover-small"
-                style="background-image:url(https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fsalud-plantas-rpimeros-auxilios-668x400x80xX.jpg?v=1615315449549)"
-              ></div>
+              <div class="cover cover-small">
+                <img src="https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fsalud-plantas-rpimeros-auxilios-668x400x80xX.jpg" width="288px" height="200px">
+              </div>
               <div class="card-body">
                 <h5 class="card-title">
                   <a href="para_que_sirve.html">Para que sirven</a>
@@ -259,17 +231,4 @@
           </div>
         </div>
       </center>
-    </div>
-    <div class="Container mt-5 mb-5 text-center">
-      <h5>
-        2021 - By Edwin Stiven Lozada Mahecha - Jairo Alexander Fernandez Lopez
-      </h5>
-
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
-          <p>
-            Ingenieria de software III - Uniremington
-          </p>
-        </div>
-      </div>
     </div>

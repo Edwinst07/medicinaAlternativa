@@ -107,7 +107,7 @@
                                             <select name="municipio" id="selectMun" class="form-select">
                                             <option value=""><?php 
                                                 if(isset($_POST["consult"])){
-                                                    echo $res["nombre"];
+                                                    echo $res["nombreMunicipio"];
                                                 }else{
                                                     echo 'Municipio';
                                                 }?>

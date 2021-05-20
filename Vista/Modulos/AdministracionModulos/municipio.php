@@ -22,7 +22,7 @@
                                         </tr>
                                         <tr>
                                             <td><label for="mun">Descripci&oacute;n:</label></td>
-                                            <td><input type="text" name="municipio" value="<?php echo $res["nombre"]; ?>" 
+                                            <td><input type="text" name="municipio" value="<?php echo $res["nombreMunicipio"]; ?>" 
                                                 id="text" title="Campo de texto" class="form-control">
                                                 <small class="form-text text-danger" id="msgText"></small>
                                             </td>

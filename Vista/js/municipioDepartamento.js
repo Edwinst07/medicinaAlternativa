@@ -8,7 +8,7 @@ $(document).ready(function(){
                      $('#selectMun').empty();
                      $('#selectMun').append('<option value="">Municipio</option>');
                      municipio.forEach(function(munic){
-                        $('#selectMun').append('<option value="' + munic.idMunicipio + '">'+ munic.nombre +'</option>');
+                        $('#selectMun').append('<option value="' + munic.idMunicipio + '">'+ munic.nombreMunicipio +'</option>');
                      })
                 });
 

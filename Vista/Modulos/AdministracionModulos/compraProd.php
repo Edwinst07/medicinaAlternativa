@@ -13,7 +13,14 @@
                                         $res = CompraProdC::ConsultCompraProdC();
                                         
                                         ?>
-
+                                        <tr>
+                                            <td><label for="codigo">C&oacute;digo:</label></td>
+                                            <td>
+                                                <input type="text" id="number" name="codigo" value="<?php echo $res["id"]; ?>"
+                                                    pattern="(^(?:\+|-)?\d+$)" title="Campo numerico" class="form-control">
+                                                    <small class="form-text text-danger" id="msgNumber"></small>
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td ><label for="prod">Producto: *</label></td>
                                             <td >
@@ -91,42 +98,39 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><label for="lab">Nombre laboratorio:*</label></td>
-                                            <td><input type="text" name="laboratorio" id="text" value="<?php echo $res['nombreLaboratorio']; ?>" 
-                                                title="Campo de texto."  class="form-control">
-                                                <small class="form-text text-danger" id="msgText"></small>
-                                            </td>
-                                            <td><label for="invima">Invima: *</label></td>
+                                            <td><label for="lab">Laboratorio:*</label></td>
                                             <td>
-                                                <select name="invima" id="select" class="form-select">
+                                                <select name="laboratorio" id="select" class="form-select">
                                                     <option value="">
+                                                    
                                                     <?php
                                                     
-                                                    if(isset($_POST['consult'])){
+                                                        if(isset($_POST["consult"])){
 
-                                                        echo $res['invima'];
-                                                    }else{
+                                                            echo $res['nombreLaboratorio'];
+                                                        }else{
+                                                            echo 'Seleccionar...';
+                                                        }
 
-                                                        echo 'invima';
-                                                    }
+                                                    ?>
+                                                    
+                                                    </option>
+
+                                                    <?php
+                                                    
+                                                        $laboratorio = CompraProdC::LaboratorioC();
+
+                                                        foreach ($laboratorio as $key => $value) {
+                                                            echo '<option value="'.$value["idLaboratorio"].'">'.$value["nombreLaboratorio"].'</option>';
+                                                        }
                                                     
                                                     ?>
-                                                    </option>
-                                                    <option value="Si">Si</option>
-                                                    <option value="No">No</option>
+
                                                 </select>
+                                            
                                                 <small class="form-text text-danger" id="msgSelect"></small>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td><label for="direccion">Direcci&oacute;n:*</label></td>
-                                            <td colspan="3">
-                                                <input type="text" name="direccion" id="" 
-                                                value="<?php echo $res['direccion'] ?>" class="form-control">
-                                                <small class="form-text text-danger" id=""></small>
-                                            </td>
-                                        </tr>
-                     
                                         <tr class="table">
                                             <td style="color:tomato;" colspan="3">
                                                 <?php
@@ -142,21 +146,50 @@
                                         </tr>
                                         <tr>
                                             <td colspan="2">
-                                                <input type="reset" name="clear" class="btn btn-outline-primary btn-sm" value="Limpiar" >
-                                                <input type="submit" name="insert" class="btn btn-outline-success btn-sm" value="Agregar" onclick="return validar('Agregar');">
-                                                <input type="submit" name="consult" class="btn btn-outline-primary btn-sm" value="Consultar" onclick="return validar('Consultar');">
-                                         
+                                               
                                                 <?php
                                                 
-                                                if(isset($_POST["consult"])){
+                                                
 
-                                                    echo ' <input type="submit" name="update" class="btn btn-outline-primary btn-sm" value="Actualizar" onclick="return validar("Actualizar");">';
-                                                }
+                                                    include "botones.php";
+
+                                                
                                                 
                                                 ?>
 
                                             </td>
                                         </tr>
+                                    </table>
+                                    <br><br><br>
+
+                                    <table class="table table-hover">
+
+                                    <tr>
+                                    
+                                        <td><label for="desc">Agregados: </label></td>
+                                        <td>
+                                        
+                                            <select name="" id="" class="form-select">
+                                                <option value="">Listado...</option>
+
+                                                <?php
+                                                
+                                                    $listado = CompraProdC::listadoC();
+
+                                                    foreach ($listado as $key => $value) {
+                                                        echo '<option value="">Código: '
+                                                            .$value["id"].'- Producto: '.$value["nombre"].'- Laboratorio: '.$value["nombreLaboratorio"]
+                                                            .'</option>';
+                                                    }
+                                                
+                                                ?>
+
+                                            </select>
+                                        
+                                        </td>
+                                    
+                                    </tr>
+
                                     </table>
                                     
                                 </div> 

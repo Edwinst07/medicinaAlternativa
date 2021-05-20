@@ -16,18 +16,22 @@
 	
   <!-- Estilos personalizados para esta plantilla -->
   <link href="Vista/css/simple-sidebar.css" rel="stylesheet">
+  <link href="Vista/css/registro.css" rel="stylesheet">
   <link rel="shortcut icon" href="Vista/img/icon.png" />
 
   <script src="Vista/js/jquery-3.6.0.js"></script>
+  <script src="Vista/js/validar.js"></script>
+  <script src="Vista/js/municipioDepartamento.js"></script>
 
 </head>
 <body>
+
   <!-- Barra de redes Sociales -->
   <ul class="nav bg-light justify-content-end">
     <nav class="navbar navbar-light bg-light">
       
       <!-- Icono Facebook -->
-      <a class="nav-link" href="www.facebook.com">
+      <a class="nav-link" href="https://www.facebook.com/">
         <img
           src="https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Ffacebook.png?v=1616520201531"
           width="30"
@@ -88,19 +92,19 @@
           </a>
           <!-- Icono carrito -->  
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="medicinaAlternativa.php?dir=index">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#Productos">Catalogo</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#mapa">Sucursales</a>
+            <a class="nav-link" href="medicinaAlternativa.php?dir=sucursales">Sucursales</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="acerca_de.html">Acerca de</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.html">Iniciar sesión</a>
+            <a class="nav-link" href="medicinaAlternativa.php?dir=login">Iniciar sesión</a>
           </li>
         </ul>
       </nav>
@@ -109,7 +113,6 @@
       <!-- BARRA HORIZONTAL -->
       <!-- VENTANA PRINCIPAL -->
       <div class="container-fluid" style="height: auto; padding-bottom: 50px; margin_botton: 50px;">
-        <h1 class="mt-4">VENTANA PRINCIPAL</h1>
         
         <?php
 
@@ -134,7 +137,7 @@
         </div>
       </div>
     </div>
-
+ 
 </body>
 
 </html>
