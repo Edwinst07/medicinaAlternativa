@@ -7,7 +7,9 @@ class Model{
         if($rutas=='VentaProducto' || $rutas=='login' || $rutas=='sucursales' || $rutas=='registrar'){
 
             $pagina = "Vista/Modulos/ClienteModulos/".$rutas.".php";
-        }else if("index"){
+        }else if($rutas == "index"){
+            $pagina = "Vista/Modulos/ClienteModulos/index.php";
+        }else{
             $pagina = "Vista/Modulos/ClienteModulos/index.php";
         }
 

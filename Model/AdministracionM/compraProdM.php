@@ -84,8 +84,8 @@ class CompraProdM{
 
     public function ConsultCompraProdM($datosC,$tablaBD){ 
 
-        $pdo = ConexionBD::cBD()->prepare("SELECT c.`id`, i.`nombre`, cp.`nombreCategoria`, 
-                            c.`fecha_fab`, c.`fecha_venc`, l.`nombreLaboratorio`
+        $pdo = ConexionBD::cBD()->prepare("SELECT c.`id`, c.`idProducto`, i.`nombre`, c.`categoriaProd`, cp.`nombreCategoria`, 
+                            c.`fecha_fab`, c.`fecha_venc`, c.`laboratorio`, l.`nombreLaboratorio`
                             FROM `medicinaalternativa`.$tablaBD AS c,
                                 `medicinaalternativa`.`inventario` AS i,
                                 `medicinaalternativa`.`categoriaprod` AS cp,

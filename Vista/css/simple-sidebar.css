@@ -267,3 +267,26 @@ transition: all 0.3s ease;
   line-height: 1;
   display: none;
 }
+
+.usuario{
+  width: 85%;
+  float:left;
+  color: green;
+  font-size: 23px;
+  letter-spacing: 2px;
+}
+
+.nombre_entidad{
+
+  width: 70%;
+  float: left;
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: green;
+}
+
+.icon{
+
+  width: 50px;
+  height: 50px;
+}

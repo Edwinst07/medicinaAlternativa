@@ -29,7 +29,7 @@
         <option value="">Municipio*</option>
       </select>
       <input class="controls" type="email" name="correo" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" title="ejemplo123@email.com" id="correo" placeholder="Correo*" require>
-      <input class="controls" type="password" name="pass" id="pass" placeholder="Contraseña*" pattern="(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{5,10})$" title="Mínimo 5 caracteres" require>
+      <input class="controls" type="password" name="pass" id="pass" placeholder="Contraseña*" pattern="(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{5,10})$" title="Mínimo 5 caracteres, con letras y numeros" require>
       <p>Estoy de acuerdo con <a href="#">Términos y Condiciones</a></p>
       <input class="botons" name="registrar" type="submit" value="Registrar">
       <p><a href="medicinaAlternativa.php?dir=login">¿Ya tengo Cuenta?</a></p>

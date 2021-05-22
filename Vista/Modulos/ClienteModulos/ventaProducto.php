@@ -2,20 +2,30 @@
     <script src="Vista/js/jquery-3.6.0.js"></script>
     <script src="Vista/js/producto.js"></script>
   <script src="Vista/js/agregarProducto.js"></script>
-
-<h1>Cuida tu salud con estos productos</h1>
+    <br><br>
+      <h1>Cuida tu salud con estos productos 
+            <img
+              src="https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fcarro.png?v=1619541607613"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+              alt="youtube"
+            />
+    </h1>
 
 <br><br><br>
 
 <selection>
         <div class="container mt-5 mb-5">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center"> 
 
     <?php
     
-    $producto = MostrarProductoC::ProductosC();
+    $producto = VentaProductoC::ProductosC();
 
     foreach ($producto as $key => $value) {
+
+      if($value["cantidad_prod"] > 0){
 
     ?>
 
@@ -31,14 +41,15 @@
                                 <i>
                                 Forma producto: <?php echo $value['forma']; ?>
                                 <br>
-                                Cantidad: <?php echo $value['cantidad_medida']." ".$value["medida"]; ?>
+                                Cantidad: <?php echo $value['cantidad_medida']." ".$value["nombreMedida"]; ?>
                                 </i>
                                 <br>
                                 <b>Disponible: <?php echo $value["cantidad_prod"] ?></b><br>
                                 <h5 class="card-title">
                                   $<?php 
-                                      $precioVenta = ($value["costo"] * $value["porc_ganancia"])/100 + $value["costo"]; 
-                                      echo $precioVenta; ?>
+                                      $precioVenta = (($value["costo"] * $value["porc_ganancia"])/100 + $value["costo"])*1.19; 
+                                      echo $precioVenta; 
+                                      ?>
                                 </h5>
 
                               </p>
@@ -58,6 +69,7 @@
 
     }
 
+  }
             ?>
 
 
@@ -98,8 +110,23 @@
       </div>
 
       <div class="row">
-          <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
-          <div class="col col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+          <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            Modo de pago: *
+          </div>
+          <div class="col col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            <select name="modoPago" id="" class="form-select">
+              <option value="">Seleccionar...</option>
+              <?php
+              
+              $modoPago = VentaProductoC::ModoPagoC();
+
+              foreach ($modoPago as $key => $value) {
+                echo '<option value="'.$value["idModoPago"].'">'.$value["nombrePago"].'</option>';
+              }
+              
+              ?>
+            </select>
+          </div>
           <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3">
             <h5 style="text-align: right;">Total a pagar: $</h5>
           </div>
@@ -110,7 +137,7 @@
 
     </div>
   </div>
-
+<br><br>
         <div class="row">
           <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
           <div class="col col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
@@ -121,12 +148,21 @@
           <div class="col col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>      
 
         </div>
+
+        <?php
+        
+        $pedido = new VentaProductoC();
+        $pedido -> AgregarPedidoC();
+        
+        ?>
     
 </form>
 
 <?php
 
-    $res = MostrarProductoC::factura();
+    //  $res = VentaProductoC::factura();
+
+    
 
 ?>
 

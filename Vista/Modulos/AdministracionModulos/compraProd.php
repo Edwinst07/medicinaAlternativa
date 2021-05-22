@@ -25,7 +25,21 @@
                                             <td ><label for="prod">Producto: *</label></td>
                                             <td >
                                                 <select name="producto" id="select" class="form-select">
-                                                    <option value="">
+                                                    <option value="
+                                                    
+                                                    <?php
+                                                    
+                                                    if(isset($_POST['consult'])){
+
+                                                        echo $res['idProducto'];
+                                                    }else{
+
+                                                        echo '';
+                                                    }
+                                                    
+                                                    ?>
+
+                                                    ">
                                                     <?php
                                                     
                                                     if(isset($_POST['consult'])){
@@ -53,7 +67,23 @@
                                             <td ><label for="categ">Categoria: *</label></td>
                                             <td >
                                                 <select name="categoria" id="select" class="form-select">
-                                                    <option value="">
+                                                    <option value="
+                                                    
+                                                    <?php
+                                                    
+                                                    if(isset($_POST['consult'])){
+
+                                                        echo $res['categoriaProd'];
+                                                    }else{
+
+                                                        echo '';
+                                                    }
+
+                                                    ?>
+                                                    
+                                                    ?>
+                                                    
+                                                    "> 
                                                     <?php
                                                     
                                                     if(isset($_POST['consult'])){
@@ -84,7 +114,7 @@
                                         </tr>
                                     
                                         <tr>
-                                            <td><label for="desc">Fecha fabrica: *</label></td>
+                                            <td><label for="desc">Fecha f&aacute;brica: *</label></td>
                                             <td>
                                                 <input type="date" id="date" name="fecha_fab" value="<?php echo $res['fecha_fab']; ?>" 
                                                 class="form-control">
@@ -101,7 +131,20 @@
                                             <td><label for="lab">Laboratorio:*</label></td>
                                             <td>
                                                 <select name="laboratorio" id="select" class="form-select">
-                                                    <option value="">
+                                                    <option value="
+                                                    
+                                                    <?php
+                                                    
+                                                    if(isset($_POST["consult"])){
+
+                                                        echo $res['laboratorio'];
+                                                    }else{
+                                                        echo '';
+                                                    }
+
+                                                    ?>
+                                                    
+                                                    ">
                                                     
                                                     <?php
                                                     
