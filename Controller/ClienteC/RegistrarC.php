@@ -41,17 +41,20 @@ class RegistrarC{
 
     public function AccesoUsuarioC(){
 
-        $datosC = array('cedula'=>$_POST["cedula"], 'nombre'=>$_POST["nombre1"]." ".$_POST["apellido1"], 'pass'=>$_POST["pass"]);
-        $tablaBD ="accesousuario";
+        if(isset($_POST["registrar"])){
 
-        $res = RegistrarM::AccesoUsuarioM($datosC,$tablaBD);
-
-        if($res){
-
-            echo '<script>alert("usuario: '.$datosC["cedula"].' \n contraseña: '.$datosC["pass"].'")</script>';
-        }else{
-
-            echo 'No tiene acceso';
+            $datosC = array('cedula'=>$_POST["cedula"], 'nombre'=>$_POST["nombre1"]." ".$_POST["apellido1"], 'pass'=>$_POST["pass"]);
+            $tablaBD ="accesousuario";
+    
+            $res = RegistrarM::AccesoUsuarioM($datosC,$tablaBD);
+    
+            // if($res){
+    
+            //     echo '<script>alert("usuario: '.$datosC["cedula"].' \n contraseña: '.$datosC["pass"].'")</script>';
+            // }else{
+    
+            //     echo 'No tiene acceso';
+            // }
         }
 
     }

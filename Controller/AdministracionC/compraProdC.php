@@ -17,7 +17,7 @@ class CompraProdC{
         return CompraProdM::LaboratorioM();
     }
 
-    public function InsertCompraProdC(){
+    public function InsertCompraProdC(){ 
 
         if(isset($_POST["insert"])){
 

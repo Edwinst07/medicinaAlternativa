@@ -1,14 +1,14 @@
 <?php 
 
-if(isset($_POST["close"])){
+  if(isset($_POST["close"])){
 
-  session_start();
-                
-  session_destroy();
-  header("location:medicinaAlternativa.php?dir=index");
+    session_start();
+                  
+    session_destroy();
+    header("location:medicinaAlternativa.php?dir=index");
 
-  exit();
-}
+    exit();
+  }
   
   if($_GET["dir"] == "login"){
 
@@ -152,7 +152,7 @@ if($_GET["dir"] == "VentaProducto"){
                     <a class="nav-link" href="medicinaAlternativa.php?dir=sucursales">Sucursales</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="acerca_de.html">Acerca de</a>
+                    <a class="nav-link" href="medicinaAlternativa.php?dir=acerca_de">Acerca de</a>
                   </li>
              
               
@@ -166,8 +166,22 @@ if($_GET["dir"] == "VentaProducto"){
           <?php
 
               if(isset($_SESSION["ingreso"])){
+          ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="medicinaAlternativa.php?dir=pedidos">
+                      Sus pedidos
 
-                echo '<li class="nav-item">
+                      <img
+                          src="https://cdn.glitch.com/fa47d939-4d1c-4764-8b4b-9f22321657df%2Fcarro.png?v=1619541607613"
+                          width="30"
+                          height="30"
+                          class="d-inline-block align-top"
+                          alt="icon"
+                      />
+
+                    </a>
+                </li>
+                <li class="nav-item">
                 <div class="close_session" style="width: 100%;">
                   <form method="POST">
                   
@@ -180,8 +194,8 @@ if($_GET["dir"] == "VentaProducto"){
                       </button>
                   </form>
                 </div>
-              </li>';
-
+              </li>
+          <?php
               }
           
           

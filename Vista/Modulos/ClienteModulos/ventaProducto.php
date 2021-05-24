@@ -9,7 +9,7 @@
               width="30"
               height="30"
               class="d-inline-block align-top"
-              alt="youtube"
+              alt="icon"
             />
     </h1>
 

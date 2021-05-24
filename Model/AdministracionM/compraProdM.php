@@ -140,7 +140,7 @@ class CompraProdM{
                                         `laboratorio`=`laboratorio`, `estado`=1
                                         WHERE `codigo`=:codigo");
 
-        $pdo -> bindParam(":codigo", $datosC, PDO::PARAM_STR);
+        $pdo -> bindParam(":codigo", $datosC, PDO::PARAM_STR); 
 
         if($pdo -> execute()){
 
