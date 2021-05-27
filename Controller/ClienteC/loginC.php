@@ -21,11 +21,11 @@
                         $_SESSION["ingreso"] = $res["cedula"];
                         header("location:medicinaAlternativa.php?dir=VentaProducto");
 
-                    }else{
+                    }else if($res["idPerfil"] == 3){
 
                         session_start();
 
-                        $_SESSION["ingreso"] = $res["cedula"];
+                        $_SESSION["admin"] = $res["cedula"];
                         header("location:index.php?ruta=index");
                     }
 

@@ -77,13 +77,12 @@
         for(k=0;k<tam;k++)
         {
             let valorTotal=parseFloat(document.getElementsByName('costo[]')[k].value) * parseFloat(document.getElementsByName('cantidad[]')[k].value);
-            document.getElementsByName('total[]')[k].value=valorTotal;
+            document.getElementsByName('total[]')[k].value = valorTotal;
             TotalPagar+=valorTotal;
         }
 
-        let totalPedido = '<input type="number" class="form-control cantidad" id="totPagar" name="totalPagar" value="'+TotalPagar+'"  readonly>';
+        let totalPedido = '<input type="number" class="form-control cantidad formatoMoneda" id="totPagar" name="totalPagar" value="'+ TotalPagar +'"  readonly>';
 
-        
         $('#totalPagar').html(totalPedido);
     }
 

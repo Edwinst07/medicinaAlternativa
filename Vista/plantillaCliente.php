@@ -1,6 +1,6 @@
 <?php 
 
-  if(isset($_POST["close"])){
+  if(isset($_POST["close"]) && isset($_SESSION["ingreso"])){
 
     session_start();
                   
@@ -226,7 +226,7 @@ if($_GET["dir"] == "VentaProducto"){
       <div class="row justify-content-center">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-2">
           <p>
-            Ingenieria de software III - Uniremington
+            Ingenier&iacute;a de software III - Uniremington
           </p>
         </div>
       </div>

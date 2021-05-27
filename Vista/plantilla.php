@@ -2,7 +2,7 @@
 
 session_start();
 
-if(empty($_SESSION["ingreso"]) ){
+if(empty($_SESSION["admin"]) ){
 
   header("location:medicinaAlternativa.php?dir=index");
 
@@ -45,7 +45,7 @@ if(empty($_SESSION["ingreso"]) ){
 
                             <?php
                             
-                                if(isset($_POST["close"])){
+                                if(isset($_POST["close"]) && isset($_SESSION["admin"])){
 
                                     // session_start();
                                     session_destroy();

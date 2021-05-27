@@ -1,9 +1,9 @@
 <div class="d-flex justify-content-center d-flex align-items-center flex-column imagen-fondo">
         <h1>
-          PLANTAS MEDICINALES
+          Plantas medicinales
         </h1>
         <p>
-          De forma facil y rapida
+          De forma f&aacute;cil y r&aacute;pida
         </p>
       </div>
       
@@ -20,16 +20,16 @@
                 <img src="https://empresason.com/upload/images/07_2020/7512_plantas-2_opt-1.jpg" width="288px" height="200px">
               </div>
               <div class="card-body ">
-                <h5 class="card-title ">
-                  <a href="tipos_de_plantas.html">Tipos de plantas</a>
+                <h5 class="card-title " >
+                  <a href="tipos_de_plantas.html" class="texto">Tipos de plantas</a>
                 </h5>
                 <p class="card-text">
                   Podrás obtener más información sobre qué tipos de plantas
                   existen.
-
-                  <button style="margin-top: 20px;" type="button" class="btn btn-info">
-                    <a href="login.html">Conoce Mas</a>
+                  <button style="margin-top: 20px;" type="button" class="btn btn-outline-success">
+                    <a href="login.html" class="texto">Conoce M&aacute;s</a>
                   </button>
+                  
                 </p>
                 
               </div>
@@ -42,12 +42,13 @@
               </div>
               <div class="card-body">
                 <h5 class="card-title">
-                  <a href="como_se_prepara.html">Remedios Naturales</a>
+                  <a href="como_se_prepara.html" class="texto">Remedios Naturales</a>
                 </h5>
                 <p class="card-text">
-                  remedios naturales para cuidar tu salud<br>
-                  <button style="margin-top: 20px; " type="button" class="btn btn-info">
-                    <a href="login.html">Conoce Mas</a>
+                  Remedios naturales para cuidar tu salud<br>
+                  
+                  <button style="margin-top: 20px;" type="button" class="btn btn-outline-success">
+                    <a href="login.html" class="texto">Conoce M&aacute;s</a>
                   </button>
                   
                 </p>
@@ -61,12 +62,12 @@
               </div>
               <div class="card-body">
                 <h5 class="card-title">
-                  <a href="diferentes_usos.html">Aromaterapia</a>
+                  <a href="diferentes_usos.html" class="texto">Aromaterapia</a>
                 </h5>
                 <p class="card-text">
-                  sencillos trucos con los que dar al hogar un olor rico y saludable
-                  <button style="margin-top: 20px;" type="button" class="btn btn-info">
-                    <a href="login.html">Conoce Mas</a>
+                  Sencillos trucos con los que dar al hogar un olor rico y saludable
+                  <button style="margin-top: 20px;" type="button" class="btn btn-outline-success">
+                    <a href="login.html" class="texto">Conoce M&aacute;s</a>
                   </button>
                 </p>
               </div>
@@ -79,13 +80,13 @@
               </div>
               <div class="card-body">
                 <h5 class="card-title">
-                  <a href="para_que_sirve.html">Para que sirven</a>
+                  <a href="para_que_sirve.html" class="texto">Para que sirven</a>
                 </h5>
                 <p class="card-text">
-                  las plantas medicinales cuentan con características que sirven
+                  Las plantas medicinales cuentan con características que sirven
                   para diferentes usos.<br>
-                  <button style="margin-top: 20px;" type="button" class="btn btn-info">
-                    <a href="login.html">Conoce Mas</a>
+                  <button style="margin-top: 20px;" type="button" class="btn btn-outline-success">
+                    <a href="login.html" class="texto">Conoce M&aacute;s</a>
                   </button>
                 </p>
               </div>
@@ -104,13 +105,13 @@
               </div>
               <div class="card-body ">
                 <h5 class="card-title ">
-                  <a href="tipos_de_plantas.html">Tipos de plantas</a>
+                  <a href="tipos_de_plantas.html" class="texto">Tipos de plantas</a>
                 </h5>
                 <p class="card-text">
                   Podrás obtener más información sobre qué tipos de plantas
                   existen.<br>
-                  <button style="margin-top: 20px;" type="button" class="btn btn-info">
-                    <a href="plantas_diureticas.html">Conoce Mas</a>
+                  <button style="margin-top: 20px;" type="button" class="btn btn-outline-success">
+                    <a href="login.html" class="texto">Conoce M&aacute;s</a>
                   </button>
                 </p>
               </div>
@@ -123,12 +124,12 @@
               </div>
               <div class="card-body">
                 <h5 class="card-title">
-                  <a href="como_se_prepara.html">Remedios Naturales</a>
+                  <a href="como_se_prepara.html" class="texto">Remedios Naturales</a>
                 </h5>
                 <p class="card-text">
-                  remedios naturales para cuidar tu salud<br>
-                  <button style="margin-top: 20px;" type="button" class="btn btn-info">
-                    <a href="plantas_diureticas.html">Conoce Mas</a>
+                  Remedios naturales para cuidar tu salud<br>
+                  <button style="margin-top: 20px;" type="button" class="btn btn-outline-success">
+                    <a href="login.html" class="texto">Conoce M&aacute;s</a>
                   </button>
                 </p>
               </div>
@@ -141,12 +142,12 @@
               </div>
               <div class="card-body">
                 <h5 class="card-title">
-                  <a href="diferentes_usos.html">Aromaterapia</a>
+                  <a href="diferentes_usos.html" class="texto">Aromaterapia</a>
                 </h5>
                 <p class="card-text">
-                  sencillos trucos con los que dar al hogar un olor rico y saludable<br>
-                  <button style="margin-top: 20px;" type="button" class="btn btn-info">
-                    <a href="plantas_diureticas.html">Conoce Mas</a>
+                  Sencillos trucos con los que dar al hogar un olor rico y saludable<br>
+                  <button style="margin-top: 20px;" type="button" class="btn btn-outline-success">
+                    <a href="login.html" class="texto">Conoce M&aacute;s</a>
                   </button>
                 </p>
               </div>
@@ -159,13 +160,13 @@
               </div>
               <div class="card-body">
                 <h5 class="card-title">
-                  <a href="para_que_sirve.html">Para que sirven</a>
+                  <a href="para_que_sirve.html" class="texto">Para que sirven</a>
                 </h5>
                 <p class="card-text">
-                  las plantas medicinales cuentan con características que sirven
+                  Las plantas medicinales cuentan con características que sirven
                   para diferentes usos. <br>
-                  <button style="margin-top: 20px;" type="button" class="btn btn-info">
-                    <a href="plantas_diureticas.html">Conoce Mas</a>
+                  <button style="margin-top: 20px;" type="button" class="btn btn-outline-success">
+                    <a href="login.html" class="texto">Conoce M&aacute;s</a>
                   </button>
                 </p>
               </div>
